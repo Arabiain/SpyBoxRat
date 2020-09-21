@@ -8,44 +8,39 @@ I, the creator and all those associated with the development and production of t
 
 Key Features : 
 <br />
-* -File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back , Move File to Bin 
-* -Encryption : Can encrypt | decrypt files in files manager with custom key (AES , RC6 , BlowFish , Salsa20 , Cast6 , TwoFish )
-* -Passwords Recovery : Currenly Supports most Chromium Web Browsers
-* -Tasks Manager : Kill Tasks , Refresh , Get Information
-* -Remote Desktop Viewer (OPTIONAL) : If you do not want to forward second port , do not use
-* -Change Wallpaper
-* -TaskBar : Hide , Show , Hide Apps , SHow Apps
-* -Mouse  : Swap Mouse Button , Lock Left Click , Lock Right Click , Lock Movements ,Lock All , Unlock All
-* -Keyboard : Lock , Unlock
-* -Message 
-* -Computer Power : Log Out , Reboot , Shutdown ,  Hibernate,  Suspend 
-* -BSOD
-* -DDOS : UDP
-* -OS INFORMATION : Get Precious Information about OS
-* -Client : Close , Close And Delete
-* -Client Size :  15KB at least (depending on the options you add) => easy to encrypt and bind
-* -Builder : X86 ,X64 (Default is AnyCPU)  , Stealth Mode , Spread , Add To Startup
-* -Currently DOESN'T SUPPORT DNS
-* -Show and Hide Desktop Icons  
-* -Show and Hide Start Icons
-* -Spread Client
-* -Add Client To Startup
-* -RED VIRUS : Block Keyboard , Block Mouse , add a watchdog to kill task manager and set a full red screen window 
+* File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back , Move File to Bin , File Information (FileSize , creation time , last write time)
+* Encryption : Can encrypt | decrypt files in files manager with custom key (AES , RC6 , BlowFish , Salsa20 , Cast6 , TwoFish )
+* Browser : Passwords Recovery , Recover chromium-based browsers History
+* Tasks Manager : Kill Tasks , Refresh , Get Information , Try To Kill All Processes
+* Remote Desktop Viewer (OPTIONAL) : If you do not want to forward second port , do not use
+* Change Wallpaper
+* TaskBar : Hide , Show , Hide Apps , SHow Apps
+* Mouse  : Swap Mouse Button , Lock Left Click , Lock Right Click , Lock Movements ,Lock All , Unlock All
+* Keyboard : Lock , Unlock
+* Message 
+* Computer Power : Log Out , Reboot , Shutdown ,  Hibernate,  Suspend 
+* BSOD
+* DDOS : UDP
+* OS INFORMATION : Get Precious Information about OS
+* Client : Close , Close And Delete
+* Client Size :  15KB at least (depending on the options you add) => easy to encrypt and bind
+* Builder : X86 ,X64 (Default is AnyCPU)  , Stealth Mode , Spread , Add To Startup
+* Currently DOESN'T SUPPORT DNS
+* Show and Hide Desktop Icons  
+* Show and Hide Start Icons
+* Spread Client
+* Add Client To Startup
+* RED VIRUS : Block Keyboard , Block Mouse , add a watchdog to kill task manager and set a full red screen window , Try To Kill All Processes
 To Close , you need to reboot 
-* -Fork Bomb
-* -Process INFO: Handle , FilePath , ID , BaseAddress , Priority , Handle Window , Window title
-* -Delete Files On Desktop , Delete Files On Desktop + Reboot
-* -Auto Recovery Options
-* -Injection Exe (NOT NATIVE)
-* -Auto Execute File In memory : BE SURE IT IS A .NET EXE , not native
-* -Monitor Rotation : 0 , 90 , 180 , 270 degrees
-* -Empty Bin | Trash 
-
-
-
-
-
-
+* Fork Bomb
+* Process INFO: Handle , FilePath , ID , BaseAddress , Priority , Handle Window , Window title
+* Delete Files On Desktop , Delete Files On Desktop + Reboot
+* Auto Recovery Options
+* Injection Exe (NOT NATIVE)
+* Auto Execute File In memory : BE SURE IT IS A .NET EXE , not native
+* Monitor Rotation : 0 , 90 , 180 , 270 degrees
+* Empty Bin | Trash 
+* Auto Add to Startup
 
 
 
