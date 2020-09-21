@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing
 Imports System.Windows.Forms
-
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class V1
     Public Shared Sub RED_SCREEN()
         D.Hide_TaskBar(0)

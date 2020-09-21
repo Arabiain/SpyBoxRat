@@ -1,7 +1,8 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports System.Windows.Forms
-
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class K
     Public Shared ghjk As New Thread(AddressOf gdzbfhbjedzfhujnezdfhjezdfhjezfhjdgsfegrjk)
     Public Shared B As Boolean = False

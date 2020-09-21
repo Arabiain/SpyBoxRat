@@ -1,12 +1,8 @@
 ﻿Public Class BuilderClass
     ''||       AUTHOR Arsium       ||
     ''||       github : https://github.com/arsium       ||
-    ''This has been adpated from NyanCat Sources (in C#) By Arsium
+    ''This class has been adpated from NyanCat Sources (in C#) By Arsium
     Public Shared Sub Build()
-
-
-
-
         Using fd As New SaveFileDialog
 
             If fd.ShowDialog = Windows.Forms.DialogResult.OK Then

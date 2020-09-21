@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
-
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class D
 
     Public Declare Auto Function ShowWindow Lib "user32.dll" (hwnd As IntPtr, nCmdShow As Integer) As Boolean

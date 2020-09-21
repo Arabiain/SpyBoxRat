@@ -38,7 +38,13 @@ Public Class MainCL
 
         ElseIf h(1) = "|MTBFILE|" Then
 
-            Await Task.Run(Sub() STB(k ,  h(2)))
+            Await Task.Run(Sub() STB(k, h(2)))
+
+
+        ElseIf h(1) = "|FI|" Then
+
+            Await Task.Run(Sub() FI.FI(k, h(2)))
+
         End If
 
 

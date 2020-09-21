@@ -1,6 +1,7 @@
 ﻿Imports System.Net.Sockets
 Imports System.Reflection
-
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class MainCL
     Public Shared Async Sub ST(ByVal k As TcpClient, ByVal l As String)
         Dim h As String() = Split(l, "|SP2|")

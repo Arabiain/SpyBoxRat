@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Runtime.InteropServices
-
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class V3
 
 
@@ -11,8 +12,6 @@ Public Class V3
     Friend Const EWX_FORCE As Integer = &H4
     Friend Const EWX_POWEROFF As Integer = &H8
     Friend Const EWX_FORCEIFHUNG As Integer = &H10
-
-
     Friend Const SHTDN_REASON_MINOR_BLUESCREEN = &HF
     Friend Const SHTDN_REASON_MAJOR_SOFTWARE = &H30000
 

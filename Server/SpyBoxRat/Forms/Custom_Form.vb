@@ -77,8 +77,12 @@ Public Class Custom_Form
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
 
+
+        '70; 58; 225
+        '70; 58; 225
+        ' Color.FromArgb(80, 68, 235)
         '     Me.FormBorderStyle = FormBorderStyle.None
-        e.Graphics.DrawRectangle(New Pen(New SolidBrush(Color.FromArgb(80, 68, 235)), 1), New Rectangle(0, 0, Me.Width - 1, Me.Height - 1))
+        e.Graphics.DrawRectangle(New Pen(New SolidBrush(Color.FromArgb(70, 58, 225)), 1), New Rectangle(0, 0, Me.Width - 1, Me.Height - 1))
 
         ' ControlPaint.DrawBorder(e.Graphics, Me.ClientRectangle, Color.FromArgb(51, 204, 255), ButtonBorderStyle.Solid)
         MyBase.OnPaint(e)
@@ -200,7 +204,4 @@ Public Class Custom_Form
 
     End Sub
 
-    Private Sub Custom_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

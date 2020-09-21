@@ -52,7 +52,7 @@ Partial Class REMOTE_BUILDER
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -68,7 +68,7 @@ Partial Class REMOTE_BUILDER
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -84,7 +84,7 @@ Partial Class REMOTE_BUILDER
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -101,7 +101,7 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.XuiCustomGroupbox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.XuiCustomGroupbox3.BorderWidth = 1
         Me.XuiCustomGroupbox3.Controls.Add(Me.XuiCustomGroupbox4)
         Me.XuiCustomGroupbox3.Controls.Add(Me.XuiCustomGroupbox2)
@@ -112,7 +112,7 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox3.Name = "XuiCustomGroupbox3"
         Me.XuiCustomGroupbox3.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XuiCustomGroupbox3.ShowText = True
-        Me.XuiCustomGroupbox3.Size = New System.Drawing.Size(402, 443)
+        Me.XuiCustomGroupbox3.Size = New System.Drawing.Size(402, 415)
         Me.XuiCustomGroupbox3.TabIndex = 14
         Me.XuiCustomGroupbox3.TabStop = False
         Me.XuiCustomGroupbox3.Text = "Connection Settings"
@@ -139,7 +139,7 @@ Partial Class REMOTE_BUILDER
         'Spread_CHK_BOX
         '
         Me.Spread_CHK_BOX.CheckboxCheckColor = System.Drawing.Color.White
-        Me.Spread_CHK_BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Spread_CHK_BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Spread_CHK_BOX.CheckboxHoverColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Spread_CHK_BOX.CheckboxStyle = XanderUI.XUICheckBox.Style.Material
         Me.Spread_CHK_BOX.Checked = False
@@ -157,7 +157,7 @@ Partial Class REMOTE_BUILDER
         'AddToStartup
         '
         Me.AddToStartup.CheckboxCheckColor = System.Drawing.Color.White
-        Me.AddToStartup.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.AddToStartup.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.AddToStartup.CheckboxHoverColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.AddToStartup.CheckboxStyle = XanderUI.XUICheckBox.Style.Material
         Me.AddToStartup.Checked = False
@@ -174,7 +174,7 @@ Partial Class REMOTE_BUILDER
         'X86BOX
         '
         Me.X86BOX.CheckboxCheckColor = System.Drawing.Color.White
-        Me.X86BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.X86BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.X86BOX.CheckboxHoverColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.X86BOX.CheckboxStyle = XanderUI.XUICheckBox.Style.Material
         Me.X86BOX.Checked = False
@@ -191,7 +191,7 @@ Partial Class REMOTE_BUILDER
         'x64BOX
         '
         Me.x64BOX.CheckboxCheckColor = System.Drawing.Color.White
-        Me.x64BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.x64BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.x64BOX.CheckboxHoverColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.x64BOX.CheckboxStyle = XanderUI.XUICheckBox.Style.Material
         Me.x64BOX.Checked = False
@@ -208,7 +208,7 @@ Partial Class REMOTE_BUILDER
         'stealth_CHK_BOX
         '
         Me.stealth_CHK_BOX.CheckboxCheckColor = System.Drawing.Color.White
-        Me.stealth_CHK_BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.stealth_CHK_BOX.CheckboxColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.stealth_CHK_BOX.CheckboxHoverColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.stealth_CHK_BOX.CheckboxStyle = XanderUI.XUICheckBox.Style.Material
         Me.stealth_CHK_BOX.Checked = False
@@ -227,7 +227,7 @@ Partial Class REMOTE_BUILDER
         '
         'XuiCustomGroupbox2
         '
-        Me.XuiCustomGroupbox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.XuiCustomGroupbox2.BorderWidth = 1
         Me.XuiCustomGroupbox2.Controls.Add(Me.NumericUpDown2)
         Me.XuiCustomGroupbox2.Controls.Add(Me.TextBox1)
@@ -264,7 +264,7 @@ Partial Class REMOTE_BUILDER
         '
         'XuiCustomGroupbox1
         '
-        Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.XuiCustomGroupbox1.BorderWidth = 1
         Me.XuiCustomGroupbox1.Controls.Add(Me.Remote_VPORT_UP)
         Me.XuiCustomGroupbox1.Location = New System.Drawing.Point(6, 113)
@@ -298,7 +298,7 @@ Partial Class REMOTE_BUILDER
         Me.UcBtnExt2.ConerRadius = 5
         Me.UcBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.UcBtnExt2.EnabledMouseEffect = True
-        Me.UcBtnExt2.FillColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.UcBtnExt2.FillColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.UcBtnExt2.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.UcBtnExt2.IsRadius = True
         Me.UcBtnExt2.IsShowRect = True
@@ -308,7 +308,7 @@ Partial Class REMOTE_BUILDER
         Me.UcBtnExt2.Name = "UcBtnExt2"
         Me.UcBtnExt2.RectColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UcBtnExt2.RectWidth = 1
-        Me.UcBtnExt2.Size = New System.Drawing.Size(388, 46)
+        Me.UcBtnExt2.Size = New System.Drawing.Size(388, 30)
         Me.UcBtnExt2.TabIndex = 5
         Me.UcBtnExt2.TabStop = False
         Me.UcBtnExt2.TipsColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(99, Byte), Integer))
@@ -326,7 +326,7 @@ Partial Class REMOTE_BUILDER
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(427, 490)
+        Me.ClientSize = New System.Drawing.Size(427, 462)
         Me.Controls.Add(Me.XuiCustomGroupbox3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)

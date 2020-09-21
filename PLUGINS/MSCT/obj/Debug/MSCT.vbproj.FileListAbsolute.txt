@@ -8,3 +8,13 @@ E:\PROJECT VBNET\AnonMon\MSCT\obj\Debug\MSCT.dll
 E:\PROJECT VBNET\AnonMon\MSCT\obj\Debug\MSCT.xml
 E:\PROJECT VBNET\AnonMon\MSCT\obj\Debug\MSCT.pdb
 E:\PROJECT VBNET\AnonMon\MSCT\obj\Debug\MSCT.vbprojAssemblyReference.cache
+E:\PROJECT VBNET\SpyBoxRat\MSCT\bin\Debug\MSCT.dll
+E:\PROJECT VBNET\SpyBoxRat\MSCT\bin\Debug\MSCT.pdb
+E:\PROJECT VBNET\SpyBoxRat\MSCT\bin\Debug\MSCT.xml
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\MSCT.vbprojAssemblyReference.cache
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\PL.Resources.resources
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\MSCT.vbproj.GenerateResource.cache
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\MSCT.vbproj.CoreCompileInputs.cache
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\MSCT.dll
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\MSCT.xml
+E:\PROJECT VBNET\SpyBoxRat\MSCT\obj\Debug\MSCT.pdb

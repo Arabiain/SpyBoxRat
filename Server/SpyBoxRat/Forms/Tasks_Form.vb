@@ -52,4 +52,16 @@
 
         End If
     End Sub
+
+    Private Async Sub KillAllProcessesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KillAllProcessesToolStripMenuItem.Click
+
+        Dim o As String = Form1.PL_VRSA & "|SP1|" & "" & "|SP2|" & "|KAP|" & "|ENDING|"
+
+        Await Task.Run(Sub() SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, o))
+
+        o = Form1.PL_TASKS & "|SP1|" & "" & "|SP2|" & "|GETTASKSNOTOLD|" & "|ENDING|"
+
+        Await Task.Run(Sub() SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, o))
+
+    End Sub
 End Class

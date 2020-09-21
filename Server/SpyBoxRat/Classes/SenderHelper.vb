@@ -5,16 +5,15 @@ Imports System.Threading
 ''||       AUTHOR Arsium       ||
 ''||       github : https://github.com/arsium       ||
 Public Class SenderHelper
+
     Public Shared Sub SenderHelper(ByVal ja As List(Of TcpClient), ByVal id As String, ByVal StringHelper As String)
 
-
         Try
+
             For Each j As TcpClient In ja
 
 
                 If id = j.Client.RemoteEndPoint.ToString Then
-
-
 
                     'For Each i As Char In StringHelper ''OLD
 
@@ -24,13 +23,7 @@ Public Class SenderHelper
 
                     '  Next  ''OLD
 
-
-
-
-
                 End If
-
-
 
             Next
 
@@ -39,13 +32,5 @@ Public Class SenderHelper
         End Try
 
     End Sub
-    Public Shared Async Function ConverTIt(ByVal o As String) As Task(Of String)
-
-        Dim hj As Byte() = Await Task.Run(Function() IO.File.ReadAllBytes(o))
-        Dim iaz As String = Await Task.Run(Function() Convert.ToBase64String(hj))
-        Return iaz
-    End Function
-
-
 
 End Class

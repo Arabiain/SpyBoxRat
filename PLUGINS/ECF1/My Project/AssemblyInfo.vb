@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Vérifiez les valeurs des attributs de l'assembly
 
 <Assembly: AssemblyTitle("ECF1")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("ECF1")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyDescription("Arsium")>
+<Assembly: AssemblyCompany("Arsium")>
+<Assembly: AssemblyProduct("SpyBoxRat")>
+<Assembly: AssemblyCopyright("Arsium")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

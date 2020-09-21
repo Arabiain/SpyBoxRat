@@ -25,47 +25,15 @@ Partial Class Injector_Form
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Injector_Form))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.UcBtnExt1 = New HZH_Controls.Controls.UCBtnExt()
         Me.XuiCustomGroupbox1 = New XanderUI.XUICustomGroupbox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.UcBtnExt1 = New HZH_Controls.Controls.UCBtnExt()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.XuiCustomGroupbox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'XuiCustomGroupbox1
-        '
-        Me.XuiCustomGroupbox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.XuiCustomGroupbox1.BorderWidth = 1
-        Me.XuiCustomGroupbox1.Controls.Add(Me.RichTextBox1)
-        Me.XuiCustomGroupbox1.Controls.Add(Me.UcBtnExt1)
-        Me.XuiCustomGroupbox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.XuiCustomGroupbox1.Location = New System.Drawing.Point(15, 39)
-        Me.XuiCustomGroupbox1.Name = "XuiCustomGroupbox1"
-        Me.XuiCustomGroupbox1.ShowText = True
-        Me.XuiCustomGroupbox1.Size = New System.Drawing.Size(535, 300)
-        Me.XuiCustomGroupbox1.TabIndex = 26
-        Me.XuiCustomGroupbox1.TabStop = False
-        Me.XuiCustomGroupbox1.Text = "Exe Injection (in memory)"
-        Me.XuiCustomGroupbox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RichTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.RichTextBox1.Location = New System.Drawing.Point(24, 19)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(487, 211)
-        Me.RichTextBox1.TabIndex = 6
-        Me.RichTextBox1.Text = ""
         '
         'UcBtnExt1
         '
@@ -79,7 +47,7 @@ Partial Class Injector_Form
         Me.UcBtnExt1.ConerRadius = 5
         Me.UcBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.UcBtnExt1.EnabledMouseEffect = True
-        Me.UcBtnExt1.FillColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.UcBtnExt1.FillColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.UcBtnExt1.Font = New System.Drawing.Font("Microsoft YaHei", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.UcBtnExt1.IsRadius = True
         Me.UcBtnExt1.IsShowRect = True
@@ -96,6 +64,38 @@ Partial Class Injector_Form
         Me.UcBtnExt1.TipsText = ""
         Me.ToolTip1.SetToolTip(Me.UcBtnExt1, "Works only with .NET exe not natitve exe ")
         '
+        'XuiCustomGroupbox1
+        '
+        Me.XuiCustomGroupbox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.XuiCustomGroupbox1.BorderWidth = 1
+        Me.XuiCustomGroupbox1.Controls.Add(Me.RichTextBox1)
+        Me.XuiCustomGroupbox1.Controls.Add(Me.UcBtnExt1)
+        Me.XuiCustomGroupbox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.XuiCustomGroupbox1.Location = New System.Drawing.Point(15, 39)
+        Me.XuiCustomGroupbox1.Name = "XuiCustomGroupbox1"
+        Me.XuiCustomGroupbox1.ShowText = True
+        Me.XuiCustomGroupbox1.Size = New System.Drawing.Size(535, 300)
+        Me.XuiCustomGroupbox1.TabIndex = 26
+        Me.XuiCustomGroupbox1.TabStop = False
+        Me.XuiCustomGroupbox1.Text = "Exe Injection (in memory)"
+        Me.XuiCustomGroupbox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RichTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.RichTextBox1.Location = New System.Drawing.Point(24, 19)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(487, 211)
+        Me.RichTextBox1.TabIndex = 6
+        Me.RichTextBox1.Text = ""
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -110,7 +110,7 @@ Partial Class Injector_Form
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -127,7 +127,7 @@ Partial Class Injector_Form
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -144,7 +144,7 @@ Partial Class Injector_Form
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat

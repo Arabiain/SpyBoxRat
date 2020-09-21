@@ -2,6 +2,8 @@
 Imports System.Net.Sockets
 Imports System.Security.Cryptography
 Imports System.Text
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class MainCL
 
 
@@ -92,9 +94,6 @@ Public Class MainCL
 End Class
 Public Class Crypto
     ' Methods
-
-
-
     Public Enum Algo_Op
 
         AES_DEC = 0

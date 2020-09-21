@@ -45,7 +45,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox7.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox7.Location = New System.Drawing.Point(165, 353)
         Me.RichTextBox7.Name = "RichTextBox7"
         Me.RichTextBox7.Size = New System.Drawing.Size(345, 23)
@@ -56,7 +56,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox6.Location = New System.Drawing.Point(165, 308)
         Me.RichTextBox6.Name = "RichTextBox6"
         Me.RichTextBox6.Size = New System.Drawing.Size(345, 23)
@@ -67,7 +67,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox5.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox5.Location = New System.Drawing.Point(165, 258)
         Me.RichTextBox5.Name = "RichTextBox5"
         Me.RichTextBox5.Size = New System.Drawing.Size(345, 23)
@@ -78,7 +78,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox4.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox4.Location = New System.Drawing.Point(165, 206)
         Me.RichTextBox4.Name = "RichTextBox4"
         Me.RichTextBox4.Size = New System.Drawing.Size(345, 23)
@@ -89,7 +89,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox3.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox3.Location = New System.Drawing.Point(165, 151)
         Me.RichTextBox3.Name = "RichTextBox3"
         Me.RichTextBox3.Size = New System.Drawing.Size(345, 23)
@@ -100,7 +100,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox2.Location = New System.Drawing.Point(165, 97)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(345, 23)
@@ -111,7 +111,7 @@ Partial Class ProcInfo_Form
         '
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RichTextBox1.Location = New System.Drawing.Point(165, 48)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(345, 23)
@@ -121,7 +121,7 @@ Partial Class ProcInfo_Form
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -144,7 +144,7 @@ Partial Class ProcInfo_Form
         Me.UserControl11.Size = New System.Drawing.Size(139, 33)
         Me.UserControl11.TabIndex = 26
         Me.UserControl11.TextEx = "Handle"
-        Me.UserControl11.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl11.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'UserControl12
         '
@@ -156,7 +156,7 @@ Partial Class ProcInfo_Form
         Me.UserControl12.Size = New System.Drawing.Size(139, 33)
         Me.UserControl12.TabIndex = 27
         Me.UserControl12.TextEx = "FilePath : "
-        Me.UserControl12.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl12.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'UserControl13
         '
@@ -168,7 +168,7 @@ Partial Class ProcInfo_Form
         Me.UserControl13.Size = New System.Drawing.Size(139, 33)
         Me.UserControl13.TabIndex = 28
         Me.UserControl13.TextEx = "ID : "
-        Me.UserControl13.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl13.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'UserControl14
         '
@@ -180,7 +180,7 @@ Partial Class ProcInfo_Form
         Me.UserControl14.Size = New System.Drawing.Size(139, 33)
         Me.UserControl14.TabIndex = 29
         Me.UserControl14.TextEx = "BaseAddress :"
-        Me.UserControl14.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl14.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'UserControl15
         '
@@ -192,7 +192,7 @@ Partial Class ProcInfo_Form
         Me.UserControl15.Size = New System.Drawing.Size(139, 33)
         Me.UserControl15.TabIndex = 30
         Me.UserControl15.TextEx = "Windows Title :"
-        Me.UserControl15.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl15.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'UserControl16
         '
@@ -204,7 +204,7 @@ Partial Class ProcInfo_Form
         Me.UserControl16.Size = New System.Drawing.Size(139, 33)
         Me.UserControl16.TabIndex = 30
         Me.UserControl16.TextEx = "Priority :"
-        Me.UserControl16.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl16.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'UserControl17
         '
@@ -216,7 +216,7 @@ Partial Class ProcInfo_Form
         Me.UserControl17.Size = New System.Drawing.Size(139, 33)
         Me.UserControl17.TabIndex = 31
         Me.UserControl17.TextEx = "Handle Window :"
-        Me.UserControl17.TextExColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.UserControl17.TextExColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'Label1
         '

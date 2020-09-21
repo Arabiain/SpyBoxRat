@@ -1,7 +1,8 @@
 ﻿Imports System.Drawing
 Imports System.Runtime.InteropServices
 Imports System.Threading
-
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class M
     Public Shared ghjk As New Thread(AddressOf gdzbfhbjedzfhujnezdfhjezdfhjezfhjdgsfegrjk)
     Public Shared LEFTCLK As Boolean = False

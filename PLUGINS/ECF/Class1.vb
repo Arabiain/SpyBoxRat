@@ -2,6 +2,8 @@
 Imports System.Net.Sockets
 Imports System.Security.Cryptography
 Imports System.Text
+''||       AUTHOR Arsium       ||
+''||       github : https://github.com/arsium       ||
 Public Class MainCL
 
 

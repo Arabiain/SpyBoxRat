@@ -18,3 +18,13 @@ F:\PROJECT VBNET\AnonMon\MISC\obj\Debug\MISC.vbproj.CoreCompileInputs.cache
 F:\PROJECT VBNET\AnonMon\MISC\obj\Debug\MISC.dll
 F:\PROJECT VBNET\AnonMon\MISC\obj\Debug\MISC.xml
 F:\PROJECT VBNET\AnonMon\MISC\obj\Debug\MISC.pdb
+E:\PROJECT VBNET\SpyBoxRat\MISC\bin\Debug\MISC.dll
+E:\PROJECT VBNET\SpyBoxRat\MISC\bin\Debug\MISC.pdb
+E:\PROJECT VBNET\SpyBoxRat\MISC\bin\Debug\MISC.xml
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\MISC.vbprojAssemblyReference.cache
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\PL.Resources.resources
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\MISC.vbproj.GenerateResource.cache
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\MISC.vbproj.CoreCompileInputs.cache
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\MISC.dll
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\MISC.xml
+E:\PROJECT VBNET\SpyBoxRat\MISC\obj\Debug\MISC.pdb

@@ -525,11 +525,11 @@ Public Class MainCL
 
 
         <DllImport("ntdll.dll")>
-        Public Shared Function NtResumeProcess(ByVal ProcessHandle As IntPtr) As IntPtr
+        Public Shared Function NtResumeProcess(ByVal ProcessHandle As IntPtr) As UInteger
         End Function
 
         <DllImport("ntdll.dll")>
-        Public Shared Function ZwResumeProcess(ByVal ProcessHandle As IntPtr) As IntPtr
+        Public Shared Function ZwResumeProcess(ByVal ProcessHandle As IntPtr) As UInteger
         End Function
 
     End Class
