@@ -1,5 +1,5 @@
 # SpyBoxRat
-[WIP] Remote Access Tool written in Visual Basic .NET (Server V4.8 and client at least V4.5) UNDER LICENSE READ THE END OF THIS PAGE !
+[WIP] Remote Access Tool written in Visual Basic .NET (Server V4.8 and client at least V4.5) with rare features that others rats don't have :) (like keyboard locking or encrytion of files directly from File Manager) UNDER LICENSE READ THE END OF THIS PAGE !
 <br />
 <br />
 LEGAL DISCLAIMER PLEASE READ!
@@ -8,8 +8,8 @@ I, the creator and all those associated with the development and production of t
 
 Key Features : 
 <br />
-* -File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back 
-* -Encryption : Can encrypt | decrypt files in files manager with custom key (AES , RC6)
+* -File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back , Move File to Bin 
+* -Encryption : Can encrypt | decrypt files in files manager with custom key (AES , RC6 , BlowFish , Salsa20 , Cast6 , TwoFish )
 * -Passwords Recovery : Currenly Supports most Chromium Web Browsers
 * -Tasks Manager : Kill Tasks , Refresh , Get Information
 * -Remote Desktop Viewer (OPTIONAL) : If you do not want to forward second port , do not use
@@ -39,6 +39,16 @@ To Close , you need to reboot
 * -Injection Exe (NOT NATIVE)
 * -Auto Execute File In memory : BE SURE IT IS A .NET EXE , not native
 * -Monitor Rotation : 0 , 90 , 180 , 270 degrees
+* -Empty Bin | Trash 
+
+
+
+
+
+
+
+
+
 
 <br /><br />
 
