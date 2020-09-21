@@ -10,7 +10,7 @@ Key Features :
 <br />
 * File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back , Move File to Bin , File Information (FileSize , creation time , last write time)
 * Encryption : Can encrypt | decrypt files in files manager with custom key (AES , RC6 , BlowFish , Salsa20 , Cast6 , TwoFish )
-* Browser : Passwords Recovery , Recover chromium-based browsers History
+* Browser : Passwords Recovery (https://github.com/arsium/Chrome-Password-Recovery) , Recover chromium-based browsers History (https://github.com/arsium/ChromeHistory)
 * Tasks Manager : Kill Tasks , Refresh , Get Information , Try To Kill All Processes
 * Remote Desktop Viewer (OPTIONAL) : If you do not want to forward second port , do not use
 * Change Wallpaper
