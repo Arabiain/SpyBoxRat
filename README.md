@@ -1,7 +1,7 @@
 # SpyBoxRat
 [WIP] Remote Access Tool written in Visual Basic .NET (Server V4.8 and client at least V4.5) with rare features that others rats don't have :) (like keyboard locking or encrytion of files directly from File Manager) UNDER LICENSE READ THE END OF THIS PAGE !
 <br /><br />
-Note from 04-10-20 : Any updates won't be released anymore for free.
+Note from 04-10-20 : I'm creating a new and improved rat based on this one. It will be paid and private rat. I will continue to update SpyBox but not often.
 <br />
 <br />
 LEGAL DISCLAIMER PLEASE READ!
