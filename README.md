@@ -10,16 +10,19 @@ I, the creator and all those associated with the development and production of t
 
 Key Features : 
 <br />
-* File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back , Move File to Bin , File Information (FileSize , creation time , last write time)
+
+* File Manager  :  Delete , Download , Launch Files  , Go through Folders and Disks , Go Back , Move File to Bin , File Information (FileSize , creation time , last write time) , Upload File To FTP Server
 * Encryption : Can encrypt | decrypt files in files manager with custom key (AES , RC6 , BlowFish , Salsa20 , Cast6 , TwoFish )
-* Browser : Passwords Recovery (https://github.com/arsium/Chrome-Password-Recovery) , Recover chromium-based browsers History (https://github.com/arsium/ChromeHistory)
-* Tasks Manager : Kill Tasks , Refresh , Get Information , Try To Kill All Processes
+* Browser : Passwords Recovery (https://github.com/arsium/Chrome-Password-Recovery), Passwords Recovery to FTP Server , PW to Discord Server (through a WebHookBot) , Recover chromium-based browsers History (https://github.com/arsium/ChromeHistory)
+* Tasks Manager : Kill Tasks , Refresh , Get Information , Try To Kill All Processes , Suspend Process And Resume Process
 * Remote Desktop Viewer (OPTIONAL) : If you do not want to forward second port , do not use
 * Change Wallpaper
 * TaskBar : Hide , Show , Hide Apps , SHow Apps
 * Mouse  : Swap Mouse Button , Lock Left Click , Lock Right Click , Lock Movements ,Lock All , Unlock All
 * Keyboard : Lock , Unlock
 * Message 
+* Open URL
+* Sound : Volume Down , Volume Up and Mute Sound
 * Computer Power : Log Out , Reboot , Shutdown ,  Hibernate,  Suspend 
 * BSOD
 * DDOS : UDP
@@ -32,6 +35,7 @@ Key Features :
 * Show and Hide Start Icons
 * Spread Client
 * Add Client To Startup
+* Blue Screen (=Red Screen , just blue lol)
 * RED VIRUS : Block Keyboard , Block Mouse , add a watchdog to kill task manager and set a full red screen window , Try To Kill All Processes
 To Close , you need to reboot 
 * Fork Bomb
