@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 ' Vérifiez les valeurs des attributs de l'assembly
 
-<Assembly: AssemblyTitle("SpyBoxRat")>
+<Assembly: AssemblyTitle("SpyBoxRat By Arsium")>
 <Assembly: AssemblyDescription("Remote Access Tool Made With Love")>
 <Assembly: AssemblyCompany("Arsium")>
 <Assembly: AssemblyProduct("SpyBoxRat")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.6.0.0")>
-<Assembly: AssemblyFileVersion("1.6.0.0")>
+<Assembly: AssemblyVersion("1.7.0.0")>
+<Assembly: AssemblyFileVersion("1.7.0.0")>

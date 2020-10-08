@@ -187,7 +187,17 @@ SpyBoxRat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_discodrd_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_downloassd_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_edit_propedrty_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
@@ -352,6 +362,11 @@ SpyBoxRat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_link_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_locks_64">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -387,6 +402,11 @@ SpyBoxRat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_minus_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_monitor_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -417,12 +437,27 @@ SpyBoxRat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_mudte_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_padlosqdck_64">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_padsdflock_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_pause_button_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_peoplem_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
@@ -438,6 +473,11 @@ SpyBoxRat
 </summary>
 </member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_pirates_of_the_carsibbean_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_plusd_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
@@ -487,6 +527,11 @@ SpyBoxRat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_resume_button_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_sdummer_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -523,6 +568,11 @@ SpyBoxRat
 </summary>
 </member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_sleesdp_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_soungd_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
@@ -622,7 +672,17 @@ SpyBoxRat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_upload_to_ftpf_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AnonMon.My.Resources.Resources.icons8_website_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AnonMon.My.Resources.Resources.icons8_websitfe_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>

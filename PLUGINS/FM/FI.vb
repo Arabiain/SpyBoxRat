@@ -54,7 +54,7 @@ Public Class FI
 
         INFO.Append(dftCreationTimete & "||" & ftLastWriteTimete & "||" & Numeric2Bytes(n.nFileSizeLow) & "||" & Path & "|FI|")
 
-        Dim Data As Byte() = Encoding.Default.GetBytes(INFO.ToString)
+        Dim Data As Byte() = Encoding.UTF8.GetBytes(INFO.ToString)
 
 
         Await k.GetStream.WriteAsync(Data, 0, Data.Length)

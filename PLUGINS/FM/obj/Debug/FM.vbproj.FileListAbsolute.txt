@@ -18,3 +18,13 @@ E:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.vbproj.CoreCompileInputs.cache
 E:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.dll
 E:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.xml
 E:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.pdb
+F:\PROJECT VBNET\SpyBoxRat\FM\bin\Debug\FM.dll
+F:\PROJECT VBNET\SpyBoxRat\FM\bin\Debug\FM.pdb
+F:\PROJECT VBNET\SpyBoxRat\FM\bin\Debug\FM.xml
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.vbprojAssemblyReference.cache
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\PL.Resources.resources
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.vbproj.GenerateResource.cache
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.vbproj.CoreCompileInputs.cache
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.dll
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.xml
+F:\PROJECT VBNET\SpyBoxRat\FM\obj\Debug\FM.pdb

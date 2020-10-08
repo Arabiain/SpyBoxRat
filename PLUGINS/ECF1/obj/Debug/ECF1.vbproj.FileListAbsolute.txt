@@ -24,3 +24,16 @@ E:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.vbproj.CopyComplete
 E:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.dll
 E:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.xml
 E:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.pdb
+F:\PROJECT VBNET\SpyBoxRat\ECF1\bin\Debug\ECF1.dll
+F:\PROJECT VBNET\SpyBoxRat\ECF1\bin\Debug\ECF1.pdb
+F:\PROJECT VBNET\SpyBoxRat\ECF1\bin\Debug\ECF1.xml
+F:\PROJECT VBNET\SpyBoxRat\ECF1\bin\Debug\CryptoHelper.xml
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.vbprojAssemblyReference.cache
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\PL.Resources.resources
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.vbproj.GenerateResource.cache
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.vbproj.CoreCompileInputs.cache
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.vbproj.Fody.CopyLocal.cache
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.vbproj.CopyComplete
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.dll
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.xml
+F:\PROJECT VBNET\SpyBoxRat\ECF1\obj\Debug\ECF1.pdb

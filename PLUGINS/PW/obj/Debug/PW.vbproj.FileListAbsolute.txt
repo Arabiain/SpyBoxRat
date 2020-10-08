@@ -17,3 +17,13 @@ E:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.vbproj.CoreCompileInputs.cache
 E:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.dll
 E:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.xml
 E:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.pdb
+F:\PROJECT VBNET\SpyBoxRat\PW\bin\Debug\PW.dll
+F:\PROJECT VBNET\SpyBoxRat\PW\bin\Debug\PW.pdb
+F:\PROJECT VBNET\SpyBoxRat\PW\bin\Debug\PW.xml
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.vbprojAssemblyReference.cache
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PL.Resources.resources
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.vbproj.GenerateResource.cache
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.vbproj.CoreCompileInputs.cache
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.dll
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.xml
+F:\PROJECT VBNET\SpyBoxRat\PW\obj\Debug\PW.pdb

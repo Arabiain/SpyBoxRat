@@ -1,5 +1,9 @@
 ﻿Public Class RViewerForm
     Private Sub RViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '    Task.Run(Sub() Test())
+    End Sub
+    Private Sub RemoteDesktop_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
 
     End Sub
 
@@ -30,5 +34,18 @@
         MyBase.WndProc(m)
     End Sub
 
+    Public Sub Test()
+        While True
 
+            Threading.Thread.Sleep(250)
+            Dim O As String = PictureBox1.Width.ToString & "||" & PictureBox1.Height.ToString & "|RD|"
+            '  Split(P.ToString.Replace("|RD+|", ""), "||")
+
+
+            SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, O)
+
+        End While
+
+
+    End Sub
 End Class

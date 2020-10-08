@@ -17,3 +17,13 @@ E:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.vbproj.CoreCompileInputs.cache
 E:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.dll
 E:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.xml
 E:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.pdb
+F:\PROJECT VBNET\SpyBoxRat\DDOS\bin\Debug\DDOS.dll
+F:\PROJECT VBNET\SpyBoxRat\DDOS\bin\Debug\DDOS.pdb
+F:\PROJECT VBNET\SpyBoxRat\DDOS\bin\Debug\DDOS.xml
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.vbprojAssemblyReference.cache
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\PL.Resources.resources
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.vbproj.GenerateResource.cache
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.vbproj.CoreCompileInputs.cache
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.dll
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.xml
+F:\PROJECT VBNET\SpyBoxRat\DDOS\obj\Debug\DDOS.pdb

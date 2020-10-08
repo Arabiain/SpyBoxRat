@@ -27,6 +27,7 @@ Partial Class FileManager_Form
         Me.FM_MenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.GoForwardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UploadFIleOnFTPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DownloadFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -70,53 +71,62 @@ Partial Class FileManager_Form
         '
         Me.FM_MenuStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.FM_MenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.FM_MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoForwardToolStripMenuItem, Me.BackToolStripMenuItem, Me.DownloadFileToolStripMenuItem, Me.DeleteFileToolStripMenuItem, Me.OpenFileToolStripMenuItem, Me.SdToolStripMenuItem, Me.FileInformationToolStripMenuItem})
+        Me.FM_MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoForwardToolStripMenuItem, Me.BackToolStripMenuItem, Me.UploadFIleOnFTPToolStripMenuItem, Me.DownloadFileToolStripMenuItem, Me.DeleteFileToolStripMenuItem, Me.OpenFileToolStripMenuItem, Me.SdToolStripMenuItem, Me.FileInformationToolStripMenuItem})
         Me.FM_MenuStrip.Name = "FM_MenuStrip"
-        Me.FM_MenuStrip.Size = New System.Drawing.Size(207, 214)
+        Me.FM_MenuStrip.Size = New System.Drawing.Size(216, 244)
         '
         'GoForwardToolStripMenuItem
         '
         Me.GoForwardToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.GoForwardToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.GoForwardToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.GoForwardToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_arrow_right_go
         Me.GoForwardToolStripMenuItem.Name = "GoForwardToolStripMenuItem"
-        Me.GoForwardToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.GoForwardToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.GoForwardToolStripMenuItem.Text = "Go Forward"
         '
         'BackToolStripMenuItem
         '
         Me.BackToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.BackToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.BackToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.BackToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_arrow_left_back
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
-        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.BackToolStripMenuItem.Text = "Back"
+        '
+        'UploadFIleOnFTPToolStripMenuItem
+        '
+        Me.UploadFIleOnFTPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.UploadFIleOnFTPToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.UploadFIleOnFTPToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_upload_to_ftpf_32
+        Me.UploadFIleOnFTPToolStripMenuItem.Name = "UploadFIleOnFTPToolStripMenuItem"
+        Me.UploadFIleOnFTPToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
+        Me.UploadFIleOnFTPToolStripMenuItem.Text = "Upload File on FTP Server"
         '
         'DownloadFileToolStripMenuItem
         '
         Me.DownloadFileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.DownloadFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.DownloadFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.DownloadFileToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_downloassd_32
         Me.DownloadFileToolStripMenuItem.Name = "DownloadFileToolStripMenuItem"
-        Me.DownloadFileToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.DownloadFileToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.DownloadFileToolStripMenuItem.Text = "Download File"
-        Me.DownloadFileToolStripMenuItem.ToolTipText = "A message will pop when the data of the file have been downloaded ! Depending on " &
-    "your connection ! Until the message pop , do not send other request to client !"
+        Me.DownloadFileToolStripMenuItem.ToolTipText = "A message will pop when the data of the file have been downloaded ! Use FTP inste" &
+    "ad of Download File For Big Files"
         '
         'DeleteFileToolStripMenuItem
         '
         Me.DeleteFileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.DeleteFileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteFileToolStripMenuItem1, Me.MoveToBinToolStripMenuItem})
-        Me.DeleteFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.DeleteFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.DeleteFileToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_trashsa
         Me.DeleteFileToolStripMenuItem.Name = "DeleteFileToolStripMenuItem"
-        Me.DeleteFileToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.DeleteFileToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.DeleteFileToolStripMenuItem.Text = "Delete File"
         '
         'DeleteFileToolStripMenuItem1
         '
         Me.DeleteFileToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.DeleteFileToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.DeleteFileToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.DeleteFileToolStripMenuItem1.Image = Global.AnonMon.My.Resources.Resources.icons8_delete_docfument_32
         Me.DeleteFileToolStripMenuItem1.Name = "DeleteFileToolStripMenuItem1"
         Me.DeleteFileToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
@@ -125,7 +135,7 @@ Partial Class FileManager_Form
         'MoveToBinToolStripMenuItem
         '
         Me.MoveToBinToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.MoveToBinToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.MoveToBinToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.MoveToBinToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.imageres_54
         Me.MoveToBinToolStripMenuItem.Name = "MoveToBinToolStripMenuItem"
         Me.MoveToBinToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
@@ -134,26 +144,26 @@ Partial Class FileManager_Form
         'OpenFileToolStripMenuItem
         '
         Me.OpenFileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.OpenFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.OpenFileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.OpenFileToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_enter
         Me.OpenFileToolStripMenuItem.Name = "OpenFileToolStripMenuItem"
-        Me.OpenFileToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.OpenFileToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.OpenFileToolStripMenuItem.Text = "Open File"
         '
         'SdToolStripMenuItem
         '
         Me.SdToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.SdToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AESENCToolStripMenuItem, Me.AesDecryptionToolStripMenuItem, Me.RC6EncryptionToolStripMenuItem, Me.RC6DecryptionToolStripMenuItem, Me.BlowFishEncyptionToolStripMenuItem, Me.BlowFishDecryptionToolStripMenuItem, Me.TwoFishEncryptionToolStripMenuItem, Me.TwoFishDecryptionToolStripMenuItem, Me.Salsa20EncryptionToolStripMenuItem, Me.Salsa20DecryptionToolStripMenuItem, Me.Cast6EncryptionToolStripMenuItem, Me.Cast6DecryptionToolStripMenuItem})
-        Me.SdToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.SdToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.SdToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_fdile_32
         Me.SdToolStripMenuItem.Name = "SdToolStripMenuItem"
-        Me.SdToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.SdToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.SdToolStripMenuItem.Text = "Encryption | Decryption"
         '
         'AESENCToolStripMenuItem
         '
         Me.AESENCToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.AESENCToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.AESENCToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.AESENCToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_locks_64
         Me.AESENCToolStripMenuItem.Name = "AESENCToolStripMenuItem"
         Me.AESENCToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -162,7 +172,7 @@ Partial Class FileManager_Form
         'AesDecryptionToolStripMenuItem
         '
         Me.AesDecryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.AesDecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.AesDecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.AesDecryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_padsdflock_32
         Me.AesDecryptionToolStripMenuItem.Name = "AesDecryptionToolStripMenuItem"
         Me.AesDecryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -171,7 +181,7 @@ Partial Class FileManager_Form
         'RC6EncryptionToolStripMenuItem
         '
         Me.RC6EncryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.RC6EncryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.RC6EncryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.RC6EncryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_locks_64
         Me.RC6EncryptionToolStripMenuItem.Name = "RC6EncryptionToolStripMenuItem"
         Me.RC6EncryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -180,7 +190,7 @@ Partial Class FileManager_Form
         'RC6DecryptionToolStripMenuItem
         '
         Me.RC6DecryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.RC6DecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.RC6DecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.RC6DecryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_padlosqdck_64
         Me.RC6DecryptionToolStripMenuItem.Name = "RC6DecryptionToolStripMenuItem"
         Me.RC6DecryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -189,7 +199,7 @@ Partial Class FileManager_Form
         'BlowFishEncyptionToolStripMenuItem
         '
         Me.BlowFishEncyptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.BlowFishEncyptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.BlowFishEncyptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.BlowFishEncyptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_locks_64
         Me.BlowFishEncyptionToolStripMenuItem.Name = "BlowFishEncyptionToolStripMenuItem"
         Me.BlowFishEncyptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -198,7 +208,7 @@ Partial Class FileManager_Form
         'BlowFishDecryptionToolStripMenuItem
         '
         Me.BlowFishDecryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.BlowFishDecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.BlowFishDecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.BlowFishDecryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_padlosqdck_64
         Me.BlowFishDecryptionToolStripMenuItem.Name = "BlowFishDecryptionToolStripMenuItem"
         Me.BlowFishDecryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -207,7 +217,7 @@ Partial Class FileManager_Form
         'TwoFishEncryptionToolStripMenuItem
         '
         Me.TwoFishEncryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TwoFishEncryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TwoFishEncryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.TwoFishEncryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_locks_64
         Me.TwoFishEncryptionToolStripMenuItem.Name = "TwoFishEncryptionToolStripMenuItem"
         Me.TwoFishEncryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -216,7 +226,7 @@ Partial Class FileManager_Form
         'TwoFishDecryptionToolStripMenuItem
         '
         Me.TwoFishDecryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TwoFishDecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TwoFishDecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.TwoFishDecryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_padlosqdck_64
         Me.TwoFishDecryptionToolStripMenuItem.Name = "TwoFishDecryptionToolStripMenuItem"
         Me.TwoFishDecryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -234,7 +244,7 @@ Partial Class FileManager_Form
         'Salsa20DecryptionToolStripMenuItem
         '
         Me.Salsa20DecryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Salsa20DecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Salsa20DecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.Salsa20DecryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_padlosqdck_64
         Me.Salsa20DecryptionToolStripMenuItem.Name = "Salsa20DecryptionToolStripMenuItem"
         Me.Salsa20DecryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -243,7 +253,7 @@ Partial Class FileManager_Form
         'Cast6EncryptionToolStripMenuItem
         '
         Me.Cast6EncryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Cast6EncryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Cast6EncryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.Cast6EncryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_locks_64
         Me.Cast6EncryptionToolStripMenuItem.Name = "Cast6EncryptionToolStripMenuItem"
         Me.Cast6EncryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -252,7 +262,7 @@ Partial Class FileManager_Form
         'Cast6DecryptionToolStripMenuItem
         '
         Me.Cast6DecryptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Cast6DecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Cast6DecryptionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.Cast6DecryptionToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_padlosqdck_64
         Me.Cast6DecryptionToolStripMenuItem.Name = "Cast6DecryptionToolStripMenuItem"
         Me.Cast6DecryptionToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
@@ -261,10 +271,10 @@ Partial Class FileManager_Form
         'FileInformationToolStripMenuItem
         '
         Me.FileInformationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.FileInformationToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.FileInformationToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.FileInformationToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_info_squared_32
         Me.FileInformationToolStripMenuItem.Name = "FileInformationToolStripMenuItem"
-        Me.FileInformationToolStripMenuItem.Size = New System.Drawing.Size(206, 30)
+        Me.FileInformationToolStripMenuItem.Size = New System.Drawing.Size(215, 30)
         Me.FileInformationToolStripMenuItem.Text = "File Information"
         '
         'ToolTip1
@@ -335,7 +345,7 @@ Partial Class FileManager_Form
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(13, 502)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(755, 36)
+        Me.Label3.Size = New System.Drawing.Size(1019, 36)
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "About Download File : A message will pop when the data of the file have been down" &
     "loaded ! Depending on your connection ! Until the message pop , do not send othe" &
@@ -516,4 +526,5 @@ Partial Class FileManager_Form
     Friend WithEvents Cast6EncryptionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Cast6DecryptionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FileInformationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UploadFIleOnFTPToolStripMenuItem As ToolStripMenuItem
 End Class

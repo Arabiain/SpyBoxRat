@@ -38,8 +38,7 @@ Partial Class Hist_Form
         '
         'UcBtnExt1
         '
-        Me.UcBtnExt1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.UcBtnExt1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UcBtnExt1.BackColor = System.Drawing.Color.White
         Me.UcBtnExt1.BtnBackColor = System.Drawing.Color.White
@@ -124,7 +123,7 @@ Partial Class Hist_Form
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(588, 5)
+        Me.Button3.Location = New System.Drawing.Point(587, -1)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(28, 28)
         Me.Button3.TabIndex = 16
@@ -140,7 +139,7 @@ Partial Class Hist_Form
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(622, 5)
+        Me.Button2.Location = New System.Drawing.Point(621, -1)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(28, 28)
         Me.Button2.TabIndex = 15
@@ -155,7 +154,7 @@ Partial Class Hist_Form
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(656, 5)
+        Me.Button1.Location = New System.Drawing.Point(655, -1)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(28, 28)
         Me.Button1.TabIndex = 14

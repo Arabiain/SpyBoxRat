@@ -7,3 +7,13 @@ E:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.vbproj.CoreCompileInputs.cache
 E:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.dll
 E:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.xml
 E:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.pdb
+F:\PROJECT VBNET\SpyBoxRat\WBBW\bin\Debug\WBBW.dll
+F:\PROJECT VBNET\SpyBoxRat\WBBW\bin\Debug\WBBW.pdb
+F:\PROJECT VBNET\SpyBoxRat\WBBW\bin\Debug\WBBW.xml
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.vbprojAssemblyReference.cache
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\PL.Resources.resources
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.vbproj.GenerateResource.cache
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.vbproj.CoreCompileInputs.cache
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.dll
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.xml
+F:\PROJECT VBNET\SpyBoxRat\WBBW\obj\Debug\WBBW.pdb

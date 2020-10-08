@@ -35,6 +35,8 @@ Partial Class Tasks_Form
         Me.KillToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoProcessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KillAllProcessesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SuspendProcessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResumeProcessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSK_TOOLSTRIP.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -122,47 +124,65 @@ Partial Class Tasks_Form
         'TSK_TOOLSTRIP
         '
         Me.TSK_TOOLSTRIP.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.TSK_TOOLSTRIP.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem, Me.KillToolStripMenuItem, Me.InfoProcessToolStripMenuItem, Me.KillAllProcessesToolStripMenuItem})
+        Me.TSK_TOOLSTRIP.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem, Me.InfoProcessToolStripMenuItem, Me.SuspendProcessToolStripMenuItem, Me.ResumeProcessToolStripMenuItem, Me.KillToolStripMenuItem, Me.KillAllProcessesToolStripMenuItem})
         Me.TSK_TOOLSTRIP.Name = "TSK_TOOLSTRIP"
-        Me.TSK_TOOLSTRIP.Size = New System.Drawing.Size(170, 124)
+        Me.TSK_TOOLSTRIP.Size = New System.Drawing.Size(171, 184)
         '
         'RefreshToolStripMenuItem
         '
         Me.RefreshToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.RefreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.RefreshToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.RefreshToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_refresh_32
         Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(169, 30)
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(170, 30)
         Me.RefreshToolStripMenuItem.Text = "Refresh"
         '
         'KillToolStripMenuItem
         '
         Me.KillToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.KillToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.KillToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.KillToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_skull_crossqdsbones_32
         Me.KillToolStripMenuItem.Name = "KillToolStripMenuItem"
-        Me.KillToolStripMenuItem.Size = New System.Drawing.Size(169, 30)
+        Me.KillToolStripMenuItem.Size = New System.Drawing.Size(170, 30)
         Me.KillToolStripMenuItem.Text = "Kill"
         '
         'InfoProcessToolStripMenuItem
         '
         Me.InfoProcessToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.InfoProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.InfoProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.InfoProcessToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_info_squared_32
         Me.InfoProcessToolStripMenuItem.Name = "InfoProcessToolStripMenuItem"
-        Me.InfoProcessToolStripMenuItem.Size = New System.Drawing.Size(169, 30)
+        Me.InfoProcessToolStripMenuItem.Size = New System.Drawing.Size(170, 30)
         Me.InfoProcessToolStripMenuItem.Text = "Info Process"
         '
         'KillAllProcessesToolStripMenuItem
         '
         Me.KillAllProcessesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.KillAllProcessesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.KillAllProcessesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.KillAllProcessesToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_thriller_32
         Me.KillAllProcessesToolStripMenuItem.Name = "KillAllProcessesToolStripMenuItem"
-        Me.KillAllProcessesToolStripMenuItem.Size = New System.Drawing.Size(169, 30)
+        Me.KillAllProcessesToolStripMenuItem.Size = New System.Drawing.Size(170, 30)
         Me.KillAllProcessesToolStripMenuItem.Text = "Kill All Processes"
         Me.KillAllProcessesToolStripMenuItem.ToolTipText = "Will try to kill all processes " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note that critical processes aren't affected if " &
     "not admin"
+        '
+        'SuspendProcessToolStripMenuItem
+        '
+        Me.SuspendProcessToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.SuspendProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.SuspendProcessToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_pause_button_32
+        Me.SuspendProcessToolStripMenuItem.Name = "SuspendProcessToolStripMenuItem"
+        Me.SuspendProcessToolStripMenuItem.Size = New System.Drawing.Size(170, 30)
+        Me.SuspendProcessToolStripMenuItem.Text = "Suspend Process"
+        '
+        'ResumeProcessToolStripMenuItem
+        '
+        Me.ResumeProcessToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.ResumeProcessToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.ResumeProcessToolStripMenuItem.Image = Global.AnonMon.My.Resources.Resources.icons8_resume_button_32
+        Me.ResumeProcessToolStripMenuItem.Name = "ResumeProcessToolStripMenuItem"
+        Me.ResumeProcessToolStripMenuItem.Size = New System.Drawing.Size(170, 30)
+        Me.ResumeProcessToolStripMenuItem.Text = "Resume Process"
         '
         'Tasks_Form
         '
@@ -196,4 +216,6 @@ Partial Class Tasks_Form
     Friend WithEvents KillToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InfoProcessToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents KillAllProcessesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SuspendProcessToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ResumeProcessToolStripMenuItem As ToolStripMenuItem
 End Class

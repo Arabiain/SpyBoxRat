@@ -19,3 +19,10 @@ E:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub_RMT.vbprojAssemblyReference.cach
 E:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub_RMT.vbproj.CoreCompileInputs.cache
 E:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub1.exe
 E:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub1.pdb
+F:\PROJECT VBNET\SpyBoxRat\Stub1\bin\Debug\Stub1.exe.config
+F:\PROJECT VBNET\SpyBoxRat\Stub1\bin\Debug\Stub1.exe
+F:\PROJECT VBNET\SpyBoxRat\Stub1\bin\Debug\Stub1.pdb
+F:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub_RMT.vbprojAssemblyReference.cache
+F:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub_RMT.vbproj.CoreCompileInputs.cache
+F:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub1.exe
+F:\PROJECT VBNET\SpyBoxRat\Stub1\obj\Debug\Stub1.pdb

