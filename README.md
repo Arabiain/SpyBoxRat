@@ -1,4 +1,4 @@
-# SpyBoxRat
+# SpyBoxRat | Outdated. Archive it instead of delete it
 [WIP] Remote Access Tool written in Visual Basic .NET (Server V4.8 and client at least V4.5) with rare features that others rats don't have :) (like keyboard locking or encrytion of files directly from File Manager) UNDER LICENSE READ THE END OF THIS PAGE !
 <br /><br />
 Note from 18-11-20 : I'm creating a new and improved rat based on this one. It will be free and  will replace this one. Consider this as a good sample for my plugins BUT not about networking (splitting packets => worst method). Next one will use Packet Serializer made by myself and multithreaded and partially Async.
